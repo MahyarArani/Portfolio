@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import '../../styles/global.css';
+
+export async function getStaticPaths() {
+	const projects = await getCollection('projects');
+	return projects.map((project) => ({
+		params: { slug: project.data.slug },
+		props: { project },
+	}));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{project.data.title} | Mahyar Arani</title>
+	</head>
+	<body class="bg-gray-900 text-gray-100 font-sans leading-relaxed">
+		<nav class="max-w-4xl mx-auto px-6 py-8">
+			<a href="/" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2">
+				← Back to Projects
+			</a>
+		</nav>
+
+		<main class="max-w-4xl mx-auto px-6 pb-20">
+			<header class="mb-12">
+				<h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+					{project.data.title}
+				</h1>
+				{project.data.date && (
+					<time class="text-gray-500 block mb-4">{project.data.date}</time>
+				)}
+			</header>
+
+			{project.data.images && project.data.images.length > 0 && (
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+					{project.data.images.map((img) => (
+						<div class="rounded-xl overflow-hidden border border-gray-800">
+							<img 
+								src={`/images/${img}`} 
+								alt={project.data.title}
+								class="w-full h-auto hover:scale-105 transition-transform duration-700"
+							/>
+						</div>
+					))}
+				</div>
+			)}
+
+			<article class="prose prose-invert prose-blue max-w-none prose-headings:text-white prose-p:text-gray-300 prose-li:text-gray-300 prose-img:rounded-xl">
+				<Content />
+			</article>
+		</main>
+	</body>
+</html>
