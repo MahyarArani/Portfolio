@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import ProjectCard from '../../components/ProjectCard.astro';
+import EntryListItem from '../../components/EntryListItem.astro';
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import { isResearch, siteMeta, sortEntries } from '../../lib/site';
 
@@ -14,8 +14,8 @@ const base = import.meta.env.BASE_URL;
       <span class="eyebrow">Research</span>
       <h1 class="page-title">Publications, papers, and ongoing studies.</h1>
       <p class="lede">
-        This section separates academic and publication-style work from portfolio case studies, which immediately makes the
-        site easier to read.
+        This section brings together publication-oriented work across organizational studies, sustainability,
+        consumer behavior, and related analytical topics.
       </p>
     </div>
   </section>
@@ -23,13 +23,13 @@ const base = import.meta.env.BASE_URL;
   <section class="section">
     <div class="shell quote-band" style="margin-bottom: 1.25rem;">
       <p>
-        Several research entries still need richer metadata such as journal, conference, DOI, publication status, and PDF
-        links. The page structure is now ready for that information when you provide it.
+        The research portfolio complements the applied project work by showing academic writing, structured evaluation
+        methods, and long-form analysis beyond operational delivery.
       </p>
     </div>
 
-    <div class="shell card-grid">
-      {entries.map((entry) => <ProjectCard entry={entry} />)}
+    <div class="shell entry-list">
+      {entries.map((entry) => <EntryListItem entry={entry} />)}
     </div>
 
     <div class="shell" style="margin-top: 1.25rem;">
@@ -37,7 +37,7 @@ const base = import.meta.env.BASE_URL;
         <img src={`${base}google-sites/images/Papers/deecf8d3a0ef17ae1fb752e12112e0eb.jpg`} alt="Research section visual" />
         <div class="mosaic-caption">
           <strong>Research archive</strong>
-          <span>Add PDFs, abstracts, publication links, and citation details here next.</span>
+          <span>Papers, frameworks, and publication-oriented studies across multiple domains.</span>
         </div>
       </div>
     </div>

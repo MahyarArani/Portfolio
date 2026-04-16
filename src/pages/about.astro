@@ -7,13 +7,39 @@ const base = import.meta.env.BASE_URL;
 
 <SiteLayout title={`About | ${siteMeta.name}`}>
   <section class="page-hero">
-    <div class="shell">
-      <span class="eyebrow">About</span>
-      <h1 class="page-title">Building useful systems, not just demos.</h1>
-      <p class="lede">
-        The current repository points to a profile centered on applied analytics, automation, geospatial systems, and
-        research. This page now gives that work a proper frame instead of leaving everything implied by thumbnails.
-      </p>
+    <div class="shell about-hero-grid">
+      <div>
+        <span class="eyebrow">About</span>
+        <h1 class="page-title">Building operational systems from complex data problems.</h1>
+        <p class="lede">
+          Mahyar Arani works across applied analytics, automation, geospatial systems, business intelligence, and research.
+          The work combines technical implementation with decision support, turning raw data and fragmented workflows into
+          usable tools for teams and stakeholders.
+        </p>
+        <div class="hero-actions">
+          <a href={`${base}projects/`} class="button-link">View Projects</a>
+          <a href={`${base}research/`} class="button-link-muted">View Research</a>
+        </div>
+      </div>
+
+      <aside class="profile-panel">
+        <span class="eyebrow">Profile Snapshot</span>
+        <h3>Applied analytics, delivery, and research</h3>
+        <div class="profile-facts">
+          <div class="profile-fact">
+            <strong>Focus</strong>
+            <span>AI workflows, Power Platform, GIS, BI, and analytical research.</span>
+          </div>
+          <div class="profile-fact">
+            <strong>Working style</strong>
+            <span>Problem framing, technical implementation, validation, and stakeholder-facing reporting.</span>
+          </div>
+          <div class="profile-fact">
+            <strong>Contact</strong>
+            <a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a>
+          </div>
+        </div>
+      </aside>
     </div>
   </section>
 
@@ -49,38 +75,66 @@ const base = import.meta.env.BASE_URL;
     <div class="shell split-grid">
       <div class="story-card">
         <span class="eyebrow">Profile</span>
-        <h3>What this portfolio already proves</h3>
+        <h3>Professional focus</h3>
         <p>
-          The current content shows a consistent pattern: translating messy operational or research problems into structured
-          systems. That includes OCR pipelines, Power Platform workflows, Power BI governance, geospatial routing, machine
-          learning comparisons, and NLP-based analysis.
+          This work sits at the intersection of data science and delivery. Across the portfolio, the recurring pattern is
+          translating messy operational or research problems into structured systems. That includes OCR pipelines,
+          Power Platform workflows, Power BI governance, geospatial routing, machine learning comparisons, and NLP analysis.
         </p>
         <p>
-          Several entries are also academic papers or publication-stage research, which means the site should present both
-          execution and authorship, not collapse them into one card grid.
+          The emphasis is not only on analysis, but on implementation: building workflows, validating outputs, supporting
+          stakeholders, and presenting results in forms teams can actually use.
         </p>
       </div>
 
       <div class="story-card">
-        <span class="eyebrow">What Is Still Missing</span>
-        <h3>The old Google Sites content still matters</h3>
+        <span class="eyebrow">Capabilities</span>
+        <h3>Core strengths</h3>
         <ul>
-          <li>A proper biography or current-role summary.</li>
-          <li>Education, awards, résumé highlights, and contact priorities.</li>
-          <li>Clean metadata for each project: role, tools, impact, links, and publication status.</li>
-          <li>External links to papers, Kaggle, Medium, GitHub repos, or dashboards where available.</li>
+          <li>Operational workflow design using Azure, Power Platform, and automation tools.</li>
+          <li>Business intelligence reporting with strong attention to data quality and exception handling.</li>
+          <li>Geospatial analysis and routing-oriented problem solving using ArcGIS and related systems.</li>
+          <li>Research-driven thinking across organizational agility, sustainability, and consumer behavior.</li>
         </ul>
       </div>
     </div>
   </section>
 
   <section class="section">
+    <div class="shell capability-grid">
+      <div class="surface">
+        <span class="eyebrow">Applied Work</span>
+        <h3>Delivery-oriented portfolio</h3>
+        <p>
+          The project work focuses on practical implementation: automation pipelines, map-based analysis, reporting systems,
+          classification workflows, and technical solutions designed for real operational use.
+        </p>
+      </div>
+      <div class="surface">
+        <span class="eyebrow">Research</span>
+        <h3>Analytical depth</h3>
+        <p>
+          The research portfolio adds another layer to the profile, showing structured inquiry into organizational behavior,
+          sustainability, supply chains, and digital consumer behavior.
+        </p>
+      </div>
+      <div class="surface">
+        <span class="eyebrow">Collaboration</span>
+        <h3>Working across teams</h3>
+        <p>
+          Many of the projects reflect collaboration with operations teams, GIS specialists, management stakeholders, and
+          business users who needed reliable outputs rather than isolated technical experiments.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="shell quote-band">
-      <span class="eyebrow">Next Input I Need From You</span>
+      <span class="eyebrow">Contact</span>
       <p>
-        Put the old Google Sites text, screenshots, PDFs, résumé, or exported page content into a folder in this repo. That
-        is the fastest way for me to rebuild the missing About, Research, and Projects narratives accurately instead of
-        inventing them.
+        For project discussions, research conversations, or collaboration opportunities, the best contact point is
+        <a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a>.
       </p>
     </div>
   </section>

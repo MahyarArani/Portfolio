@@ -1,5 +1,6 @@
 ---
-title: "Forex Tweets With NEO4J"
+title: "Forex Tweets with Neo4j"
+summary: "Used graph modeling and concept mapping in Neo4j to analyze forex-related tweets, market actors, event types, and their relationships."
 date: "2024-01-01"
 images: ["Forex Tweets With NEO4J/773c52f3d3b974150f19f510b4245195.jpg", "Forex Tweets With NEO4J/92843994e45d6bd1628dbe5742c0aabf.jpg", "Forex Tweets With NEO4J/c6193bd9e28c8f88addb761856b9c87d.jpg", "Forex Tweets With NEO4J/18ef3f72773316798de154264c5a4887.jpg", "Forex Tweets With NEO4J/da08b6f52599e775d812fb352e39a96b.jpg", "Forex Tweets With NEO4J/7d7e9057a23766b5c1aa2d6fea49fc2d.jpg", "Forex Tweets With NEO4J/eb5559bb0715a3ce33425fbe4c86a8e7.jpg"]
 slug: "forex-tweets-with-neo4j"
@@ -44,5 +45,4 @@ Centrality:https://en.wikipedia.org/wiki/Centrality
 List of all tweets associated with the most central node in the concept map:
 
 List the concepts related to tweets with a particular hashtag:
-
 
