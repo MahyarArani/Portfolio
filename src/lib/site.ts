@@ -34,7 +34,19 @@ export function sortEntries(entries: ProjectEntry[]) {
   return [...entries].sort((a, b) => a.data.title.localeCompare(b.data.title));
 }
 
+export function getLabel(entry: ProjectEntry) {
+  return isResearch(entry) ? 'Research' : 'Project';
+}
+
+export function getYear(entry: ProjectEntry) {
+  return entry.data.date?.slice(0, 4) ?? 'Selected work';
+}
+
 export function getExcerpt(entry: ProjectEntry) {
+  if (entry.data.summary) {
+    return entry.data.summary;
+  }
+
   const normalized = entry.body
     .replace(/\r/g, '')
     .split('\n')

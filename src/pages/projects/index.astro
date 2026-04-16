@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import ProjectCard from '../../components/ProjectCard.astro';
+import EntryListItem from '../../components/EntryListItem.astro';
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import { isProject, siteMeta, sortEntries } from '../../lib/site';
 
@@ -20,8 +20,8 @@ const entries = sortEntries((await getCollection('projects')).filter(isProject))
   </section>
 
   <section class="section">
-    <div class="shell card-grid">
-      {entries.map((entry) => <ProjectCard entry={entry} />)}
+    <div class="shell entry-list">
+      {entries.map((entry) => <EntryListItem entry={entry} />)}
     </div>
   </section>
 </SiteLayout>

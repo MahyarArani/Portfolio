@@ -1,5 +1,6 @@
 ---
 title: "Challenges and Factors Affecting Purchase Intention"
+summary: "Research study on the drivers of purchase intention in Afghanistan, examining consumer attitudes, norms, demographics, and country-of-origin effects."
 date: "2024-01-01"
 images: ["Challenges and Factors Affecting Purchase/ee460881fa85d3b72e18b00fde69e8a6.jpg", "Challenges and Factors Affecting Purchase/9b67398b7f85ed48b373a6fc3e59b91c.jpg", "Challenges and Factors Affecting Purchase/c433b561a05babec1a2848ceb70c9018.jpg", "Challenges and Factors Affecting Purchase/69a90c370280f0aada99a45e136bbd25.jpg", "Challenges and Factors Affecting Purchase/5cc7718fae19bc61daf1cc7ced5d1583.jpg", "Challenges and Factors Affecting Purchase/3bd5ce7bfa809686036d500392443dd4.jpg", "Challenges and Factors Affecting Purchase/b27999bee6a252b091f970ad2cb9b05d.jpg", "Challenges and Factors Affecting Purchase/d7ad5266d489aa785880a1e9ff853af6.jpg"]
 slug: "challenges-and-factors-affecting-purchase"
@@ -418,5 +419,4 @@ Yamada, K. (2019). The Effects of Customer  Expectations for Consumer Behavior 
 Zaremohzzabieh, Z., ismail, N., Ahrari, S., &  Samah, A. A. (2021). The effects of consumer attitude on green purchase  intention: A. Journal of Business Research, In Press.
 
 Zaremohzzabieh, Z., ismail, N., Ahrari, S., &  Samah, A. A. (2021). The effects of consumer attitude on green purchase  intention: A. Journal of Business Research, In Press.
-
 

@@ -1,5 +1,6 @@
 ---
-title: "AzureAutoML VS Developed Model"
+title: "Azure AutoML vs. Custom Model Development"
+summary: "Compared Azure AutoML with a custom Jupyter-based modeling workflow for shipping-cost prediction, focusing on tradeoffs in speed, control, and model quality."
 date: "2024-01-01"
 images: ["AzureAutoML VS Developed Model/7cf1054d93ca2c7dbc96b76654994650.jpg", "AzureAutoML VS Developed Model/6ca1126ab9d291c4063e5ccf8669a362.jpg", "AzureAutoML VS Developed Model/bdc24b940b1501bc7fbfdbb1539a117d.jpg", "AzureAutoML VS Developed Model/017f8015f2dd1115651f7c80a4a81685.jpg", "AzureAutoML VS Developed Model/4ec393b1bf9636e7bd51857d9c5675c0.jpg", "AzureAutoML VS Developed Model/8dccef6ef35e6a44c0da3654096ca07d.jpg", "AzureAutoML VS Developed Model/d1996c5410b35a48d17723c68bad4e89.jpg"]
 slug: "azureautoml-vs-developed-model"
@@ -7,11 +8,15 @@ slug: "azureautoml-vs-developed-model"
 
 Predicting Shipping Cost: A Comparison Between Azure AutoML and Jupyter Notebook Developed Code
 
-Introduction
+This project compares two approaches to a regression problem: using Azure AutoML and building a custom workflow in Jupyter Notebook code. The use case was shipping-cost prediction, with the goal of understanding where automated machine learning is most useful and where hand-built development still provides an advantage.
 
-Azure AutoML a part of Azure Cognitive Services has become a powerful tool as it empowers data scientists and developers to build, deploy and manage high-quality models faster and with confidence. AzureML expertly accelerates time to value with industry-leading MLOps (machine learning operations), open-source interoperability, and integrated tools. It aims to innovate on a secure, trusted platform designed for responsible machine learning (ML).
+Azure AutoML is attractive because it speeds up experimentation, automates model selection and tuning, and lowers the barrier to building usable models. At the same time, custom notebook-based workflows provide more direct control over preprocessing, feature engineering, validation, interpretability, and experimental design. This project was framed around that tradeoff.
 
-How It Works?
+The underlying dataset focused on shipping costs for art and collectible objects, where price is influenced by dimensions, weight, materials, shipping mode, distance, and service options. That makes it a practical setting for comparing automated and manual modeling approaches because the target is real-valued, the feature set is mixed, and the business context is easy to understand.
+
+Rather than treating AutoML as a replacement for data science, this project treats it as a benchmark and productivity tool. The comparison is useful for understanding when a faster automated workflow is sufficient and when custom development is justified.
+
+## How Azure AutoML works
 
 Based on Microsoft's definition, Azure AutoML is Empower professional and nonprofessional data scientists to build machine learning models rapidly. Automate time-consuming and iterative tasks of machine learning model development using breakthrough research and accelerate time to market [link].
 
@@ -129,7 +134,7 @@ Any Need for Data Science Jobs in the Future?
 
 Altogether, AzureML improves productivity within the studio, the development experience that supports all ML tasks to build, train and deploy models. It collaborates with Jupyter Notebooks using built-in support for popular open-source frameworks and libraries. One of the major factors is how it creates accurate models quickly with automated ML, using feature engineering and hyperparameter-sweeping capabilities. AzureML accesses the debugger, profiler, and explanations to improve model performance as you train and also uses deep Visual Studio Code integration to go from local to cloud training seamlessly and autoscale with powerful cloud-based CPU and GPU clusters [link].
 
-Experiment: Defining A Supply Chain Shipping Price Prediction
+## Experiment: shipping price prediction
 
 It can be difficult to navigate the logistics when it comes to buying art. These include, but are not limited to, the following:
 
@@ -244,5 +249,3 @@ Conclusions
 By comparing the results we could see the generated Jupyter notebook (human supervision) has a better performance on modeling and hyper tuning and making pipelines. However, as expected Azure AutoML has a relatively simple data injecting to modeling and pipeline production. The lower performance on Azure AutoML is negligible comparing all other benefits Azure services and studios provide for us and on a broader scale for Enterprises.
 
 Building and testing a model is fairly simple in Azure AutoML. However, to get the best result, a data scientist or a team of data scientists that has a deep, fundamental and statistical knowledge of machine learning should supervise the Azure AutoMl and with other Azure capabilities like Designer, pipeline, Azure Cognitive Services (ACS), Azure Kubernetes Service (AKS), the performed model via Azure could reach and save significant benefits for the businesses. We should consider that it requires knowledge of the characteristics of machine learning algorithms, and certainly will not develop new ones automatically. But it does provide an environment where machine learning could be used effectively without low-level implementation of algorithmic knowledge. So, it can be concluded on the note that AzureML will not end the future of data science but it would rather improve the working process with its advanced features.
-
-

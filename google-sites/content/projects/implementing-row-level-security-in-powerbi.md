@@ -1,5 +1,6 @@
 ---
-title: "Level Security in PowerBI"
+title: "Implementing Row-Level Security in Power BI"
+summary: "Designed a Power BI row-level security model to control enterprise data access by role while preserving reporting flexibility for leaders and managers."
 date: "2024-01-01"
 images: ["Implementing Row-Level Security in PowerBI/4d46d235b45901c5e055ecd4a0914879.jpg", "Implementing Row-Level Security in PowerBI/eb665aeac679b2c704d5a5840323ace0.jpg", "Implementing Row-Level Security in PowerBI/297cbc43ca9ff19bc11dfcbeff0292b2.jpg", "Implementing Row-Level Security in PowerBI/484fdd5baa589af47010d1b412b735ad.jpg", "Implementing Row-Level Security in PowerBI/da1ecf941a614fd332079a9e9f2fceb7.jpg", "Implementing Row-Level Security in PowerBI/799b2fe704fbc6b3532c12b21ed46f48.jpg"]
 slug: "implementing-row-level-security-in-powerbi"
@@ -30,5 +31,4 @@ Final Product
 This dual-layered approach not only upheld data confidentiality and integrity but also streamlined decision-making processes at Arlington County Government. Through meticulous planning and execution, we demonstrated the transformative potential of PowerBI in enabling data-driven governance and informed decision-making within enterprises.
 
 Explore our project to delve deeper into the realm of custom row-level security in PowerBI, and unlock the full potential of your organization's data assets.
-
 

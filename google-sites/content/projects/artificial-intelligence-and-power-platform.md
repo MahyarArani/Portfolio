@@ -1,19 +1,22 @@
 ---
 title: "Artificial Intelligence and Power Platform Automation"
+summary: "Designed an OCR-driven reporting workflow using Azure AI Document Intelligence, Power BI, Power Apps, and Power Automate to replace manual document processing."
 date: "2024-01-01"
 images: ["Artificial Intelligence and Power Platform/2a4dc1858de9aa10f3f2fd7ecd23343d.jpg", "Artificial Intelligence and Power Platform/e233b9ae8c3140d3f9ae6d820ae21aa8.jpg", "Artificial Intelligence and Power Platform/146593fcfa6a0ab25e5da72cbdccb536.jpg", "Artificial Intelligence and Power Platform/501d356f23c5ee24d39a9b250c4cd433.jpg", "Artificial Intelligence and Power Platform/20612220c55c2d84f7bc032aaca94550.jpg", "Artificial Intelligence and Power Platform/63571e4945ff2f40f252112d94fe9e3b.jpg", "Artificial Intelligence and Power Platform/7d96da6884e329817841abedab35f14e.jpg", "Artificial Intelligence and Power Platform/b888c0f932075610ea701460bb6fc1ad.jpg", "Artificial Intelligence and Power Platform/a76dc742c24530fab5c28d1a4f0c78b5.jpg", "Artificial Intelligence and Power Platform/53a8b2e59b07694acbbb218973e0c240.jpg", "Artificial Intelligence and Power Platform/5f733263d0d9940083383e8f73f2cf0f.jpg", "Artificial Intelligence and Power Platform/4ec0182549f6ba1a1985b3295fefb077.jpg", "Artificial Intelligence and Power Platform/0f9feed07b0c71a573ad9ac38008f1df.jpg", "Artificial Intelligence and Power Platform/da00bc7a7fe02506ab48760d15466e12.jpg"]
 slug: "artificial-intelligence-and-power-platform"
 ---
 
-Artificial Intelligence and Power Platform Automation for For Scanned Document Parsing and Reporting
+Artificial Intelligence and Power Platform Automation for Scanned Document Parsing and Reporting
 
-The Current Process
+This project automated the processing of annual solid waste and recycling reports that were previously handled manually. Contractors submitted nine-page scanned forms, and staff had to extract the values into spreadsheets, validate them, and prepare reports for management. The manual process consumed significant staff time and introduced frequent data-entry errors.
 
-Our journey commenced with the influx of numerous filled documents from the previous year, alongside the continuous arrival of new files from contractors. These documents, comprising nine pages each, detailed the yearlySolid Waste Hauler's Tonnage Reports, mandated byVirginia Code Section 10.1-1411and required byArlington County. Commercial hauling companies were obligated to submit an Annual Solid Waste & Recycling Report to the county for the preceding calendar year.
+The solution combined Azure AI Document Intelligence, Python-based validation logic, Power BI, Power Apps, and Power Automate into one workflow. OCR was used to extract report fields from submitted scans, custom logic was added to assess confidence at a more usable level, Power BI highlighted exceptions and anomalies, and Power Apps allowed staff to correct values directly when review was needed.
 
-Traditionally, these data-filled documents were manually entered into spreadsheets, predominantly Excel, and transformed into charts for managerial analysis. However, this manual process proved laborious, consuming significant employee resources. Through meticulous auditing, we uncovered a startling revelation: approximately 15-20 percent of entries wereerror-prone, exacerbating the inefficiencies of the existing system.
+The project was especially valuable because high OCR confidence alone was not enough to guarantee good operational data. Some errors came from poor scans, some came from misaligned table entries, and others came from users entering values in the wrong place or inventing their own categories. The broader system was therefore designed not just to extract data, but to support review, outlier detection, and exception handling.
 
-Brainstorming Solutions In the DSS-PMO Group and Delivering MVPs
+At a portfolio level, this is a business intelligence and workflow automation case study: replacing a repetitive manual process with a reviewable, end-to-end pipeline that improves accuracy, visibility, and reporting speed.
+
+## Context and problem
 
 The brainstorming process kicked off with a range of initial solutions, each presenting its own merits and limitations, which were subsequently presented to the chief department of Solid Waste. Among the proposed solutions were:
 
@@ -37,7 +40,7 @@ In a strategic move to optimize resources, we opted for a cost-effective approac
 
 Click to See the Field Extraction in GitHub
 
-High Level PowerBI Dashboard
+## Validation and reporting workflow
 
 Once we completed the export and manipulation of the data, transforming them into multiple Excel tabs, each representing a distinct section of the report, we seamlessly integrated Power BI into our workflow. Harnessing the power of the Power Query editor, we embarked on an exhaustive journey of data cleaning and transformation to ensure the utmost accuracy in our insights. However, our commitment to precision didn't end there.
 
@@ -68,5 +71,3 @@ By embracing the synergy betweenPowerAppfor data editing andPower Automatefor re
 Managerial Dashboard and Year-to-Year Comparison
 
 In conclusion, this project represents a pure business intelligence endeavor aimed at revolutionizing data management and decision-making processes within the organization. By harnessing the power ofPower BI, PowerApps, and Power Automate, we have constructed a dynamic dashboard ecosystem that empowers staff with comprehensive insights, streamlined data editing capabilities, and real-time data synchronization. From meticulous data cleaning and transformation to proactive hauler compliance monitoring, every aspect of this project has been meticulously crafted to enhance operational efficiency and drive informed decision-making. As we move forward, this business intelligence solution stands as a testament to our commitment to innovation and excellence in navigating the complexities of modern data management.
-
-

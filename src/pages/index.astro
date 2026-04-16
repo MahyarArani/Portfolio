@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import ProjectCard from '../components/ProjectCard.astro';
+import EntryListItem from '../components/EntryListItem.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import { getFeatured, isProject, isResearch, siteMeta, sortEntries } from '../lib/site';
 
@@ -15,12 +15,13 @@ const base = import.meta.env.BASE_URL;
   <section class="hero">
     <div class="shell hero-grid">
       <div class="hero-panel hero-copy">
-        <span class="eyebrow">Data Science • Automation • Research</span>
-        <h1>Work that moves from analysis to deployment.</h1>
+        <span class="eyebrow">Portfolio</span>
+        <h1>Mahyar Arani</h1>
+        <p class="hero-role">Data Scientist, Automation Specialist, and Researcher</p>
         <p class="lede">
-          I build applied AI, GIS, analytics, and automation systems, and I publish research around decision-making,
-          social behavior, and supply chains. This site now separates operational projects from academic work so it reads
-          like a portfolio instead of a gallery dump.
+          I build applied AI, GIS, analytics, and automation systems, and I publish research on decision-making,
+          social behavior, and supply chains. The portfolio brings together delivery-focused case studies and
+          publication-based work in one place.
         </p>
         <div class="pill-row">
           <span class="metric-chip">Power Platform</span>
@@ -36,24 +37,7 @@ const base = import.meta.env.BASE_URL;
 
       <div class="hero-panel hero-visual">
         <img src={`${base}google-sites/images/Home/f7aac0d3278a0a68b2e3fd1587734938.jpg`} alt="Portfolio overview collage" />
-        <div class="hero-badge">From public-sector operations to academic research</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell feature-strip">
-      <div class="feature-cell">
-        <strong>{projectEntries.length}+ case studies</strong>
-        <span class="section-caption">Applied work in automation, BI, GIS, NLP, and predictive modeling.</span>
-      </div>
-      <div class="feature-cell">
-        <strong>{researchEntries.length} research items</strong>
-        <span class="section-caption">Conference papers, journal work, and ongoing research topics.</span>
-      </div>
-      <div class="feature-cell">
-        <strong>Structured for updates</strong>
-        <span class="section-caption">Each entry lives in a Markdown file so future edits stay simple.</span>
+        <div class="hero-badge">Applied systems, analytics, and research</div>
       </div>
     </div>
   </section>
@@ -61,40 +45,44 @@ const base = import.meta.env.BASE_URL;
   <section class="section">
     <div class="shell section-head">
       <div>
-        <span class="eyebrow">About</span>
-        <h2 class="section-title">A clearer front page</h2>
+        <span class="eyebrow">Overview</span>
+        <h2 class="section-title">Research interests and applied areas</h2>
       </div>
       <p class="section-caption">
-        Your old Google Sites content implied multiple narratives: who you are, what you build, and what you publish.
-        The new structure starts separating those paths.
+        The portfolio centers on operational analytics, geospatial systems, automation, and research-led problem solving.
       </p>
     </div>
 
     <div class="shell split-grid">
       <div class="surface">
         <p>
-          The current repository already contains enough material to present you as more than a list of tiles. The strongest
-          themes are AI-enabled operations, geospatial workflows, Power Platform automation, analytics, and research methods.
+          The strongest themes across the work are AI-enabled operations, geospatial workflows, Power Platform automation,
+          business intelligence, and research methods. The projects focus on practical systems that support decisions,
+          reduce manual effort, and improve visibility into operations.
         </p>
         <p>
-          What is still missing is your full personal narrative from the previous site: background, current role, résumé
-          highlights, publications, awards, and contact intent. I can wire the page structure now, but the strongest version
-          still needs your old source material.
+          Alongside applied delivery, the research portfolio covers organizational agility, social media behavior,
+          sustainable supplier evaluation, and related analytical topics. Together they show both implementation depth
+          and a structured research mindset.
         </p>
       </div>
 
-      <div class="stats-grid">
-        <div class="stat-block">
-          <strong>AI</strong>
-          <span>Document parsing, ML workflows, classification, and NLP exploration.</span>
+      <div class="focus-list surface">
+        <div class="focus-item">
+          <strong>Applied AI and ML</strong>
+          <span>Document parsing, predictive modeling, classification, and NLP workflows.</span>
         </div>
-        <div class="stat-block">
-          <strong>GIS</strong>
-          <span>ArcGIS integration, routing automation, and map-driven analytics.</span>
+        <div class="focus-item">
+          <strong>GIS and Routing</strong>
+          <span>ArcGIS integration, route optimization, and spatial decision support.</span>
         </div>
-        <div class="stat-block">
-          <strong>BI</strong>
-          <span>Power BI, governance, process dashboards, and operational reporting.</span>
+        <div class="focus-item">
+          <strong>Business Intelligence</strong>
+          <span>Power BI governance, reporting systems, and operational dashboards.</span>
+        </div>
+        <div class="focus-item">
+          <strong>Research Methods</strong>
+          <span>Analytical frameworks for organizational behavior, sustainability, and consumer studies.</span>
         </div>
       </div>
     </div>
@@ -103,28 +91,28 @@ const base = import.meta.env.BASE_URL;
   <section class="section">
     <div class="shell section-head">
       <div>
-        <span class="eyebrow">Featured Work</span>
-        <h2 class="section-title">Applied projects</h2>
+        <span class="eyebrow">Selected Projects</span>
+        <h2 class="section-title">Selected case studies</h2>
       </div>
       <a href={`${base}projects/`} class="button-link-muted">See all projects</a>
     </div>
 
-    <div class="shell card-grid">
-      {featured.map((entry) => <ProjectCard entry={entry} />)}
+    <div class="shell entry-list">
+      {featured.map((entry) => <EntryListItem entry={entry} />)}
     </div>
   </section>
 
   <section class="section">
     <div class="shell section-head">
       <div>
-        <span class="eyebrow">Research</span>
-        <h2 class="section-title">Publications and studies</h2>
+        <span class="eyebrow">Selected Research</span>
+        <h2 class="section-title">Publications and analytical work</h2>
       </div>
       <a href={`${base}research/`} class="button-link-muted">Open research page</a>
     </div>
 
-    <div class="shell card-grid">
-      {researchEntries.slice(0, 3).map((entry) => <ProjectCard entry={entry} />)}
+    <div class="shell entry-list">
+      {researchEntries.slice(0, 4).map((entry) => <EntryListItem entry={entry} />)}
     </div>
   </section>
 </SiteLayout>
