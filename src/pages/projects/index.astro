@@ -19,6 +19,18 @@ const entries = sortEntries((await getCollection('projects')).filter(isProject))
     </div>
   </section>
 
+  <section class="section section-tight">
+    <div class="shell collection-banner">
+      <div>
+        <span class="eyebrow">Project Archive</span>
+        <h2>{entries.length} project entries</h2>
+      </div>
+      <p>
+        Delivery-focused work across automation, GIS, business intelligence, machine learning, and operational analytics.
+      </p>
+    </div>
+  </section>
+
   <section class="section">
     <div class="shell entry-list">
       {entries.map((entry) => <EntryListItem entry={entry} />)}
