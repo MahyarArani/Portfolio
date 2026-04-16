@@ -12,18 +12,19 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content } = await render(project);
+const base = import.meta.env.BASE_URL;
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
 		<meta name="viewport" content="width=device-width" />
 		<title>{project.data.title} | Mahyar Arani</title>
 	</head>
 	<body class="bg-gray-900 text-gray-100 font-sans leading-relaxed">
 		<nav class="max-w-4xl mx-auto px-6 py-8">
-			<a href="/Portfolio/" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2">
+			<a href={base} class="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2">
 				← Back to Projects
 			</a>
 		</nav>
@@ -43,7 +44,7 @@ const { Content } = await render(project);
 					{project.data.images.map((img) => (
 						<div class="rounded-xl overflow-hidden border border-gray-800">
 							<img 
-								src={`/Portfolio/images/${img}`} 
+								src={`${base}images/${img}`} 
 								alt={project.data.title}
 								class="w-full h-auto hover:scale-105 transition-transform duration-700"
 							/>
