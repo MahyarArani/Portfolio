@@ -1,55 +1,130 @@
 ---
 import { getCollection } from 'astro:content';
-import '../styles/global.css';
+import ProjectCard from '../components/ProjectCard.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { getFeatured, isProject, isResearch, siteMeta, sortEntries } from '../lib/site';
 
-const projects = await getCollection('projects');
+const entries = sortEntries(await getCollection('projects'));
+const projectEntries = entries.filter(isProject);
+const researchEntries = entries.filter(isResearch);
+const featured = getFeatured(entries);
 const base = import.meta.env.BASE_URL;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Mahyar Arani | Portfolio</title>
-	</head>
-	<body class="bg-gray-900 text-gray-100 font-sans">
-		<main class="max-w-6xl mx-auto px-4 py-20">
-			<header class="mb-16">
-				<h1 class="text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-					Mahyar Arani
-				</h1>
-				<p class="text-xl text-gray-400 max-w-2xl">
-					Data Scientist & Automation Expert specializing in AI, Power Platform, and Business Intelligence.
-				</p>
-			</header>
+<SiteLayout title={`${siteMeta.name} | Portfolio`}>
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-panel hero-copy">
+        <span class="eyebrow">Data Science • Automation • Research</span>
+        <h1>Work that moves from analysis to deployment.</h1>
+        <p class="lede">
+          I build applied AI, GIS, analytics, and automation systems, and I publish research around decision-making,
+          social behavior, and supply chains. This site now separates operational projects from academic work so it reads
+          like a portfolio instead of a gallery dump.
+        </p>
+        <div class="pill-row">
+          <span class="metric-chip">Power Platform</span>
+          <span class="metric-chip">Azure + GIS</span>
+          <span class="metric-chip">Machine Learning</span>
+          <span class="metric-chip">Business Intelligence</span>
+        </div>
+        <div class="hero-actions">
+          <a href={`${base}projects/`} class="button-link">View Projects</a>
+          <a href={`${base}research/`} class="button-link-muted">Browse Research</a>
+        </div>
+      </div>
 
-			<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				{projects.map((project) => (
-					<a href={`${base}projects/${project.data.slug}`} class="group block bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-2">
-						<div class="h-48 overflow-hidden bg-gray-700 flex items-center justify-center">
-							{project.data.images && project.data.images.length > 0 ? (
-								<img 
-									src={`${base}images/${project.data.images[0]}`} 
-									alt={project.data.title}
-									class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-								/>
-							) : (
-								<div class="text-gray-500 italic">No Preview</div>
-							)}
-						</div>
-						<div class="p-6">
-							<h2 class="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">
-								{project.data.title}
-							</h2>
-							<p class="text-gray-400 text-sm line-clamp-3">
-								Click to view details and findings.
-							</p>
-						</div>
-					</a>
-				))}
-			</section>
-		</main>
-	</body>
-</html>
+      <div class="hero-panel hero-visual">
+        <img src={`${base}google-sites/images/Home/f7aac0d3278a0a68b2e3fd1587734938.jpg`} alt="Portfolio overview collage" />
+        <div class="hero-badge">From public-sector operations to academic research</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell feature-strip">
+      <div class="feature-cell">
+        <strong>{projectEntries.length}+ case studies</strong>
+        <span class="section-caption">Applied work in automation, BI, GIS, NLP, and predictive modeling.</span>
+      </div>
+      <div class="feature-cell">
+        <strong>{researchEntries.length} research items</strong>
+        <span class="section-caption">Conference papers, journal work, and ongoing research topics.</span>
+      </div>
+      <div class="feature-cell">
+        <strong>Structured for updates</strong>
+        <span class="section-caption">Each entry lives in a Markdown file so future edits stay simple.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell section-head">
+      <div>
+        <span class="eyebrow">About</span>
+        <h2 class="section-title">A clearer front page</h2>
+      </div>
+      <p class="section-caption">
+        Your old Google Sites content implied multiple narratives: who you are, what you build, and what you publish.
+        The new structure starts separating those paths.
+      </p>
+    </div>
+
+    <div class="shell split-grid">
+      <div class="surface">
+        <p>
+          The current repository already contains enough material to present you as more than a list of tiles. The strongest
+          themes are AI-enabled operations, geospatial workflows, Power Platform automation, analytics, and research methods.
+        </p>
+        <p>
+          What is still missing is your full personal narrative from the previous site: background, current role, résumé
+          highlights, publications, awards, and contact intent. I can wire the page structure now, but the strongest version
+          still needs your old source material.
+        </p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-block">
+          <strong>AI</strong>
+          <span>Document parsing, ML workflows, classification, and NLP exploration.</span>
+        </div>
+        <div class="stat-block">
+          <strong>GIS</strong>
+          <span>ArcGIS integration, routing automation, and map-driven analytics.</span>
+        </div>
+        <div class="stat-block">
+          <strong>BI</strong>
+          <span>Power BI, governance, process dashboards, and operational reporting.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell section-head">
+      <div>
+        <span class="eyebrow">Featured Work</span>
+        <h2 class="section-title">Applied projects</h2>
+      </div>
+      <a href={`${base}projects/`} class="button-link-muted">See all projects</a>
+    </div>
+
+    <div class="shell card-grid">
+      {featured.map((entry) => <ProjectCard entry={entry} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell section-head">
+      <div>
+        <span class="eyebrow">Research</span>
+        <h2 class="section-title">Publications and studies</h2>
+      </div>
+      <a href={`${base}research/`} class="button-link-muted">Open research page</a>
+    </div>
+
+    <div class="shell card-grid">
+      {researchEntries.slice(0, 3).map((entry) => <ProjectCard entry={entry} />)}
+    </div>
+  </section>
+</SiteLayout>

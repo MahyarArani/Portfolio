@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectCard from '../../components/ProjectCard.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { isProject, siteMeta, sortEntries } from '../../lib/site';
+
+const entries = sortEntries((await getCollection('projects')).filter(isProject));
+---
+
+<SiteLayout title={`Projects | ${siteMeta.name}`}>
+  <section class="page-hero">
+    <div class="shell">
+      <span class="eyebrow">Projects</span>
+      <h1 class="page-title">Operational and technical case studies.</h1>
+      <p class="lede">
+        These entries focus on delivery: systems built, workflows automated, dashboards designed, and analysis turned into
+        usable outputs for stakeholders.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell card-grid">
+      {entries.map((entry) => <ProjectCard entry={entry} />)}
+    </div>
+  </section>
+</SiteLayout>

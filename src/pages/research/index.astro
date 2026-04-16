@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectCard from '../../components/ProjectCard.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { isResearch, siteMeta, sortEntries } from '../../lib/site';
+
+const entries = sortEntries((await getCollection('projects')).filter(isResearch));
+const base = import.meta.env.BASE_URL;
+---
+
+<SiteLayout title={`Research | ${siteMeta.name}`}>
+  <section class="page-hero">
+    <div class="shell">
+      <span class="eyebrow">Research</span>
+      <h1 class="page-title">Publications, papers, and ongoing studies.</h1>
+      <p class="lede">
+        This section separates academic and publication-style work from portfolio case studies, which immediately makes the
+        site easier to read.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell quote-band" style="margin-bottom: 1.25rem;">
+      <p>
+        Several research entries still need richer metadata such as journal, conference, DOI, publication status, and PDF
+        links. The page structure is now ready for that information when you provide it.
+      </p>
+    </div>
+
+    <div class="shell card-grid">
+      {entries.map((entry) => <ProjectCard entry={entry} />)}
+    </div>
+
+    <div class="shell" style="margin-top: 1.25rem;">
+      <div class="mosaic-card">
+        <img src={`${base}google-sites/images/Papers/deecf8d3a0ef17ae1fb752e12112e0eb.jpg`} alt="Research section visual" />
+        <div class="mosaic-caption">
+          <strong>Research archive</strong>
+          <span>Add PDFs, abstracts, publication links, and citation details here next.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

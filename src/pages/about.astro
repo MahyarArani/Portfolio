@@ -1,0 +1,87 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { siteMeta } from '../lib/site';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<SiteLayout title={`About | ${siteMeta.name}`}>
+  <section class="page-hero">
+    <div class="shell">
+      <span class="eyebrow">About</span>
+      <h1 class="page-title">Building useful systems, not just demos.</h1>
+      <p class="lede">
+        The current repository points to a profile centered on applied analytics, automation, geospatial systems, and
+        research. This page now gives that work a proper frame instead of leaving everything implied by thumbnails.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell mosaic-grid">
+      <div class="mosaic-card">
+        <img src={`${base}google-sites/images/About/6cdf7efe64b19032e5a0831a488d00d9.jpg`} alt="About page visual" />
+        <div class="mosaic-caption">
+          <strong>Applied problem solving</strong>
+          <span>Automation, dashboarding, cloud workflows, and decision support.</span>
+        </div>
+      </div>
+      <div class="mosaic-stack">
+        <div class="mosaic-card">
+          <img src={`${base}google-sites/images/About/39b511dacf577b7d8d65710d8ac5432c.jpg`} alt="Research and analytics visual" />
+          <div class="mosaic-caption">
+            <strong>Research mindset</strong>
+            <span>Academic work informs the way operational systems are designed and evaluated.</span>
+          </div>
+        </div>
+        <div class="mosaic-card">
+          <img src={`${base}google-sites/images/About/e7f160a2f8ed3114741686f388a1cf5f.jpg`} alt="Portfolio background visual" />
+          <div class="mosaic-caption">
+            <strong>Cross-functional delivery</strong>
+            <span>From data cleaning and modeling to deployment and stakeholder reporting.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split-grid">
+      <div class="story-card">
+        <span class="eyebrow">Profile</span>
+        <h3>What this portfolio already proves</h3>
+        <p>
+          The current content shows a consistent pattern: translating messy operational or research problems into structured
+          systems. That includes OCR pipelines, Power Platform workflows, Power BI governance, geospatial routing, machine
+          learning comparisons, and NLP-based analysis.
+        </p>
+        <p>
+          Several entries are also academic papers or publication-stage research, which means the site should present both
+          execution and authorship, not collapse them into one card grid.
+        </p>
+      </div>
+
+      <div class="story-card">
+        <span class="eyebrow">What Is Still Missing</span>
+        <h3>The old Google Sites content still matters</h3>
+        <ul>
+          <li>A proper biography or current-role summary.</li>
+          <li>Education, awards, résumé highlights, and contact priorities.</li>
+          <li>Clean metadata for each project: role, tools, impact, links, and publication status.</li>
+          <li>External links to papers, Kaggle, Medium, GitHub repos, or dashboards where available.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell quote-band">
+      <span class="eyebrow">Next Input I Need From You</span>
+      <p>
+        Put the old Google Sites text, screenshots, PDFs, résumé, or exported page content into a folder in this repo. That
+        is the fastest way for me to rebuild the missing About, Research, and Projects narratives accurately instead of
+        inventing them.
+      </p>
+    </div>
+  </section>
+</SiteLayout>

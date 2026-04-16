@@ -1,61 +1,79 @@
 ---
 import { getCollection, render } from 'astro:content';
-import '../../styles/global.css';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { getCoverImage, getExcerpt, isResearch } from '../../lib/site';
 
 export async function getStaticPaths() {
-	const projects = await getCollection('projects');
-	return projects.map((project) => ({
-		params: { slug: project.data.slug },
-		props: { project },
-	}));
+  const entries = await getCollection('projects');
+  return entries.map((project) => ({
+    params: { slug: project.data.slug },
+    props: { project },
+  }));
 }
 
 const { project } = Astro.props;
 const { Content } = await render(project);
 const base = import.meta.env.BASE_URL;
+const cover = getCoverImage(project);
+const entryType = isResearch(project) ? 'Research' : 'Project';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
-		<meta name="viewport" content="width=device-width" />
-		<title>{project.data.title} | Mahyar Arani</title>
-	</head>
-	<body class="bg-gray-900 text-gray-100 font-sans leading-relaxed">
-		<nav class="max-w-4xl mx-auto px-6 py-8">
-			<a href={base} class="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2">
-				← Back to Projects
-			</a>
-		</nav>
+<SiteLayout title={`${project.data.title} | Mahyar Arani`} description={getExcerpt(project)}>
+  <section class="page-hero">
+    <div class="shell">
+      <div class="eyebrow-row" style="margin-bottom: 0.75rem;">
+        <span class="eyebrow-tag">{entryType}</span>
+        <a href={isResearch(project) ? `${base}research/` : `${base}projects/`} class="button-link-muted">Back</a>
+      </div>
+      <h1 class="page-title">{project.data.title}</h1>
+      {project.data.date && <p class="lede">Date: {project.data.date}</p>}
+    </div>
+  </section>
 
-		<main class="max-w-4xl mx-auto px-6 pb-20">
-			<header class="mb-12">
-				<h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-					{project.data.title}
-				</h1>
-				{project.data.date && (
-					<time class="text-gray-500 block mb-4">{project.data.date}</time>
-				)}
-			</header>
+  <section class="section">
+    <div class="shell split-grid">
+      <div class="surface">
+        <p>{getExcerpt(project)}</p>
+      </div>
+      <div class="surface">
+        <div class="pill-row">
+          <span class="metric-chip">{entryType}</span>
+          {project.data.images && <span class="metric-chip">{project.data.images.length} visuals</span>}
+          {project.data.date && <span class="metric-chip">{project.data.date.slice(0, 4)}</span>}
+        </div>
+      </div>
+    </div>
+  </section>
 
-			{project.data.images && project.data.images.length > 0 && (
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-					{project.data.images.map((img) => (
-						<div class="rounded-xl overflow-hidden border border-gray-800">
-							<img 
-								src={`${base}images/${img}`} 
-								alt={project.data.title}
-								class="w-full h-auto hover:scale-105 transition-transform duration-700"
-							/>
-						</div>
-					))}
-				</div>
-			)}
+  {cover && (
+    <section class="section">
+      <div class="shell mosaic-card">
+        <img src={cover} alt={project.data.title} />
+        <div class="mosaic-caption">
+          <strong>{project.data.title}</strong>
+          <span>{entryType} detail page</span>
+        </div>
+      </div>
+    </section>
+  )}
 
-			<article class="prose prose-invert prose-blue max-w-none prose-headings:text-white prose-p:text-gray-300 prose-li:text-gray-300 prose-img:rounded-xl">
-				<Content />
-			</article>
-		</main>
-	</body>
-</html>
+  {project.data.images && project.data.images.length > 1 && (
+    <section class="section">
+      <div class="shell card-grid">
+        {project.data.images.slice(1, 4).map((img) => (
+          <div class="mosaic-card">
+            <img src={`${base}google-sites/images/${img}`} alt={project.data.title} loading="lazy" />
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="shell surface">
+      <article class="prose prose-invert prose-lg max-w-none prose-headings:font-normal prose-headings:text-white prose-p:text-slate-300 prose-li:text-slate-300 prose-strong:text-white prose-a:text-emerald-300">
+        <Content />
+      </article>
+    </div>
+  </section>
+</SiteLayout>
