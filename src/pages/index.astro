@@ -3,12 +3,13 @@ import { getCollection } from 'astro:content';
 import '../styles/global.css';
 
 const projects = await getCollection('projects');
+const base = import.meta.env.BASE_URL;
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Mahyar Arani | Portfolio</title>
@@ -26,11 +27,11 @@ const projects = await getCollection('projects');
 
 			<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 				{projects.map((project) => (
-					<a href={`/Portfolio/projects/${project.data.slug}`} class="group block bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-2">
+					<a href={`${base}projects/${project.data.slug}`} class="group block bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-2">
 						<div class="h-48 overflow-hidden bg-gray-700 flex items-center justify-center">
 							{project.data.images && project.data.images.length > 0 ? (
 								<img 
-									src={`/Portfolio/images/${project.data.images[0]}`} 
+									src={`${base}images/${project.data.images[0]}`} 
 									alt={project.data.title}
 									class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
 								/>
