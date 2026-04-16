@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCoverImage, getExcerpt, isResearch } from '../lib/site';
+
+interface Props {
+  entry: CollectionEntry<'projects'>;
+}
+
+const { entry } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const cover = getCoverImage(entry);
+const label = isResearch(entry) ? 'Research' : 'Project';
+---
+
+<article class="content-card">
+  <a href={`${base}projects/${entry.data.slug}`} class="content-card-link">
+    <div class="content-card-media">
+      {cover ? (
+        <img src={cover} alt={entry.data.title} loading="lazy" class="content-card-image" />
+      ) : (
+        <div class="content-card-fallback">No preview available</div>
+      )}
+    </div>
+    <div class="content-card-body">
+      <div class="eyebrow-row">
+        <span class="eyebrow-tag">{label}</span>
+        {entry.data.date && <span class="eyebrow-date">{entry.data.date.slice(0, 4)}</span>}
+      </div>
+      <h3>{entry.data.title}</h3>
+      <p>{getExcerpt(entry)}</p>
+    </div>
+  </a>
+</article>
