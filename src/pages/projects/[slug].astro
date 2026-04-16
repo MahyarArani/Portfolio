@@ -23,7 +23,7 @@ const { Content } = await render(project);
 	</head>
 	<body class="bg-gray-900 text-gray-100 font-sans leading-relaxed">
 		<nav class="max-w-4xl mx-auto px-6 py-8">
-			<a href="/" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2">
+			<a href="/Portfolio/" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2">
 				← Back to Projects
 			</a>
 		</nav>
@@ -43,7 +43,7 @@ const { Content } = await render(project);
 					{project.data.images.map((img) => (
 						<div class="rounded-xl overflow-hidden border border-gray-800">
 							<img 
-								src={`/images/${img}`} 
+								src={`/Portfolio/images/${img}`} 
 								alt={project.data.title}
 								class="w-full h-auto hover:scale-105 transition-transform duration-700"
 							/>
