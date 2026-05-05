@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import EntryListItem from '../components/EntryListItem.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import { getFeatured, isProject, isResearch, siteMeta, sortEntries } from '../lib/site';
+import { about } from '../lib/about';
 
 const entries = sortEntries(await getCollection('projects'));
 const projectEntries = entries.filter(isProject);
@@ -12,124 +13,89 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <SiteLayout title={`${siteMeta.name} | Portfolio`}>
-  <section class="hero">
-    <div class="shell hero-grid">
-      <div class="hero-panel hero-copy">
+
+  <!-- ─── Personal intro ─────────────────────────────────────────────────── -->
+  <section class="intro-section">
+    <div class="shell intro-inner">
+
+      <div class="intro-text">
         <span class="eyebrow">Portfolio</span>
-        <h1>Mahyar Arani</h1>
-        <p class="hero-role">Data Scientist, Automation Specialist, and Researcher</p>
-        <p class="lede">
-          I build applied AI, GIS, analytics, and automation systems, and I publish research on decision-making,
-          social behavior, and supply chains. The portfolio brings together delivery-focused case studies and
-          publication-based work in one place.
-        </p>
+        <h1 class="intro-name">{about.greeting}</h1>
+        <p class="intro-role">{about.role}</p>
+        <p class="intro-bio">{about.bio}</p>
         <div class="pill-row">
-          <span class="metric-chip">Power Platform</span>
-          <span class="metric-chip">Azure + GIS</span>
-          <span class="metric-chip">Machine Learning</span>
-          <span class="metric-chip">Business Intelligence</span>
+          {about.skills.map((skill) => <span class="skill-chip">{skill}</span>)}
         </div>
-        <div class="hero-actions">
+        <div class="intro-actions">
           <a href={`${base}projects/`} class="button-link">View Projects</a>
-          <a href={`${base}research/`} class="button-link-muted">Browse Research</a>
+          <a href={`${base}about/`} class="button-link-muted">About Me</a>
+          <a href={`mailto:${about.email}`} class="button-link-muted">Contact</a>
         </div>
       </div>
 
-      <div class="hero-panel hero-visual">
-        <img src={`${base}google-sites/images/Home/f7aac0d3278a0a68b2e3fd1587734938.jpg`} alt="Portfolio overview collage" />
-        <div class="hero-badge">Applied systems, analytics, and research</div>
+      <div class="intro-card">
+        <div class="intro-card-header">
+          <div class="intro-avatar">{about.name.split(' ').map((n: string) => n[0]).join('')}</div>
+          <div>
+            <strong class="intro-card-name">{about.name}</strong>
+            <span class="intro-card-sub">Data Science &amp; Research</span>
+          </div>
+        </div>
+
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <strong>{projectEntries.length}</strong>
+            <span>Projects</span>
+          </div>
+          <div class="intro-stat">
+            <strong>{researchEntries.length}</strong>
+            <span>Papers</span>
+          </div>
+          <div class="intro-stat">
+            <strong>4</strong>
+            <span>Domains</span>
+          </div>
+        </div>
+
+        <div class="intro-focus">
+          {about.focusAreas.map((area) => (
+            <div class="intro-focus-item">
+              <strong>{area.title}</strong>
+              <span>{area.desc}</span>
+            </div>
+          ))}
+        </div>
       </div>
+
     </div>
   </section>
 
-  <section class="section section-tight">
-    <div class="shell profile-strip">
-      <div class="profile-strip-item">
-        <strong>{projectEntries.length}</strong>
-        <span>Project case studies</span>
-      </div>
-      <div class="profile-strip-item">
-        <strong>{researchEntries.length}</strong>
-        <span>Research entries</span>
-      </div>
-      <div class="profile-strip-item">
-        <strong>4</strong>
-        <span>Core domains: AI, GIS, BI, research</span>
-      </div>
-    </div>
-  </section>
-
+  <!-- ─── Selected Projects ────────────────────────────────────────────────── -->
   <section class="section">
     <div class="shell section-head">
       <div>
-        <span class="eyebrow">Overview</span>
-        <h2 class="section-title">Research interests and applied areas</h2>
+        <span class="eyebrow">Work</span>
+        <h2 class="section-title">Selected projects</h2>
       </div>
-      <p class="section-caption">
-        The portfolio centers on operational analytics, geospatial systems, automation, and research-led problem solving.
-      </p>
+      <a href={`${base}projects/`} class="button-link-muted">See all →</a>
     </div>
-
-    <div class="shell split-grid">
-      <div class="surface">
-        <p>
-          The strongest themes across the work are AI-enabled operations, geospatial workflows, Power Platform automation,
-          business intelligence, and research methods. The projects focus on practical systems that support decisions,
-          reduce manual effort, and improve visibility into operations.
-        </p>
-        <p>
-          Alongside applied delivery, the research portfolio covers organizational agility, social media behavior,
-          sustainable supplier evaluation, and related analytical topics. Together they show both implementation depth
-          and a structured research mindset.
-        </p>
-      </div>
-
-      <div class="focus-list surface">
-        <div class="focus-item">
-          <strong>Applied AI and ML</strong>
-          <span>Document parsing, predictive modeling, classification, and NLP workflows.</span>
-        </div>
-        <div class="focus-item">
-          <strong>GIS and Routing</strong>
-          <span>ArcGIS integration, route optimization, and spatial decision support.</span>
-        </div>
-        <div class="focus-item">
-          <strong>Business Intelligence</strong>
-          <span>Power BI governance, reporting systems, and operational dashboards.</span>
-        </div>
-        <div class="focus-item">
-          <strong>Research Methods</strong>
-          <span>Analytical frameworks for organizational behavior, sustainability, and consumer studies.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell section-head">
-      <div>
-        <span class="eyebrow">Selected Projects</span>
-        <h2 class="section-title">Selected case studies</h2>
-      </div>
-      <a href={`${base}projects/`} class="button-link-muted">See all projects</a>
-    </div>
-
     <div class="shell entry-list">
       {featured.map((entry) => <EntryListItem entry={entry} />)}
     </div>
   </section>
 
+  <!-- ─── Research ─────────────────────────────────────────────────────────── -->
   <section class="section">
     <div class="shell section-head">
       <div>
-        <span class="eyebrow">Selected Research</span>
-        <h2 class="section-title">Publications and analytical work</h2>
+        <span class="eyebrow">Research</span>
+        <h2 class="section-title">Publications &amp; analytical work</h2>
       </div>
-      <a href={`${base}research/`} class="button-link-muted">Open research page</a>
+      <a href={`${base}research/`} class="button-link-muted">All research →</a>
     </div>
-
     <div class="shell entry-list">
-      {researchEntries.slice(0, 4).map((entry) => <EntryListItem entry={entry} />)}
+      {researchEntries.slice(0, 3).map((entry) => <EntryListItem entry={entry} />)}
     </div>
   </section>
+
 </SiteLayout>
