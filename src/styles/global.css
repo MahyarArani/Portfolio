@@ -90,9 +90,28 @@ img {
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(18px);
-  background: rgba(253, 248, 205, 0.88);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: #252218;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+  background-size: 18px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.site-header .brand-kicker {
+  color: #5ecfb0;
+}
+
+.site-header .brand-name {
+  color: #f0ece0;
+}
+
+.site-header .nav-link {
+  color: rgba(240, 236, 220, 0.65);
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link.is-active {
+  color: #f0ece0;
+  background: rgba(255, 255, 255, 0.09);
 }
 
 .inner-header,
