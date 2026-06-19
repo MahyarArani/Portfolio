@@ -6,29 +6,26 @@ images: ["Implementing Row-Level Security in PowerBI/4d46d235b45901c5e055ecd4a09
 slug: "implementing-row-level-security-in-powerbi"
 ---
 
-Empowering Enterprise Data Governance: Implementing Row-Level Security in PowerBI
+Empowering Enterprise Data Governance: Implementing Row-Level Security in Power BI
 
-Have you ever pondered over the intricacies of limiting data visibility based on employee roles within PowerBI?
+This project focused on limiting data visibility by employee role while preserving a single reporting experience in Power BI.
 
-Picture this scenario:In a dynamic environment like Arlington County Government, the Chief Manager seeks a comprehensive overview of all division managers under their purview, while division managers require access to all staff timecard records. This is precisely where the versatility of row-level security in PowerBI becomes invaluable, providing customized solutions to meet these intricate data governance requirements.
+In a dynamic government environment, senior leaders needed a broad view of division-level activity while managers needed access to detailed records for their own teams. Row-level security made it possible to support those different views from the same governed dashboard.
 
-Our recent project at Arlington County Government involved the implementation of a dynamic PowerBI dashboard connected to an AzureSQL server table housing punch card data spanning the entire county. This dashboard not only presents a bird's eye view of employee activities but also allows for granular control over data access.
+The solution used a Power BI dashboard connected to Azure SQL Server tables containing countywide punch-card data. The dashboard provided a broad view of employee activity while enforcing granular access control.
 
-The process was intricate yet rewarding. We seamlessly integrated data from various sources including Punch IOT devices dispersed across different levels, rooms, and facilities throughout the county. Leveraging stored procedures and Azure functions, we orchestrated the collection and storage of countywide punch card records, ensuring a centralized repository of valuable insights.
+## Data architecture
 
-One of the key highlights of our project was the implementation of two distinct approaches to row-level security. Firstly, we tailored access to align with hierarchical structures within the organization. Department Chiefs could effortlessly access data pertaining only to division managers' time logs, while division managers and team leaders had visibility into all employees under their purview, spanning multiple hierarchical levels.
+The process integrated punch-card data from devices distributed across levels, rooms, and facilities. Stored procedures and Azure Functions supported collection and storage so the reporting layer had a centralized source for analysis.
 
-Bridging Data Gaps: Empowering Remote Workforce Management with Custom PowerApps Solutions
+The security model supported hierarchical access. Department chiefs could view records for division managers, while division managers and team leaders could view the employees under their area of responsibility.
 
-The challenges in Arlington County extend beyond just those encompassed by traditional punch card systems. With numerous employees working remotely or at off-site locations, relying solely on facility-based data collection risks overlooking a significant portion of the workforce. Many employees, especially those not utilizing punch card systems, could be inadvertently excluded from crucial data sets.
+## Bridging data gaps with Power Apps
 
-To address this issue comprehensively, we developed a robust solution: a custom PowerApps application. This application facilitates seamless data input from staff members working outside the facilities. Employees can log their work hours or activities directly into the system, ensuring accurate and inclusive data collection. Managers, in turn, have the capability to review and approve these submissions on a weekly basis, thereby maintaining data integrity and completeness.
+Traditional punch-card systems did not capture every employee scenario, especially remote or off-site work. To close that gap, the solution included a custom Power Apps application for staff who needed to submit hours or activity outside the facility-based data stream.
 
-By leveraging the flexibility and accessibility of PowerApps, we bridged the gap between traditional data collection methods and the evolving needs of a diverse workforce. Our solution not only enhances the accuracy of data representation but also fosters a culture of transparency and accountability within Arlington County's operations.
+Managers could review and approve submissions weekly, improving completeness while preserving accountability.
 
-Final Product
+## Outcome
 
-This dual-layered approach not only upheld data confidentiality and integrity but also streamlined decision-making processes at Arlington County Government. Through meticulous planning and execution, we demonstrated the transformative potential of PowerBI in enabling data-driven governance and informed decision-making within enterprises.
-
-Explore our project to delve deeper into the realm of custom row-level security in PowerBI, and unlock the full potential of your organization's data assets.
-
+The final result combined row-level security, Azure SQL data storage, Power BI reporting, and Power Apps data entry into a more complete governance workflow. It improved confidentiality, visibility, and decision support without forcing separate reports for every audience.

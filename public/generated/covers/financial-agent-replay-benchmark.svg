@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Financial Agent Replay Benchmark cover</title>
+  <desc id="desc">A financial replay timeline with agent nodes, a locked future window, and risk curves.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f6faf8"/>
+      <stop offset="1" stop-color="#dff2ed"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0" stop-color="#f1b900"/>
+      <stop offset="1" stop-color="#ffe08a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <circle cx="1030" cy="120" r="180" fill="#f1b900" opacity=".15"/>
+  <circle cx="160" cy="650" r="210" fill="#0c8c76" opacity=".12"/>
+  <g fill="none" stroke="#d5e6e0" stroke-width="2">
+    <path d="M80 160h1040M80 280h1040M80 400h1040M80 520h1040"/>
+    <path d="M210 90v580M430 90v580M650 90v580M870 90v580"/>
+  </g>
+  <g transform="translate(110 180)">
+    <rect x="0" y="0" width="980" height="360" rx="28" fill="#ffffff" stroke="#d8e7e2" stroke-width="3"/>
+    <path d="M70 260C160 190 230 205 310 155C405 95 470 135 540 120C665 92 720 170 840 84" fill="none" stroke="#0c8c76" stroke-width="10" stroke-linecap="round"/>
+    <path d="M70 292C160 245 250 268 325 236C430 193 495 225 590 200C710 168 755 224 880 170" fill="none" stroke="#f1b900" stroke-width="8" stroke-linecap="round"/>
+    <g fill="#14222b">
+      <circle cx="70" cy="260" r="11"/>
+      <circle cx="310" cy="155" r="11"/>
+      <circle cx="540" cy="120" r="11"/>
+      <circle cx="840" cy="84" r="11"/>
+    </g>
+    <g fill="#ffffff" stroke="#0c8c76" stroke-width="5">
+      <circle cx="160" cy="190" r="35"/>
+      <circle cx="405" cy="95" r="35"/>
+      <circle cx="720" cy="170" r="35"/>
+    </g>
+    <g fill="#0c8c76">
+      <circle cx="160" cy="190" r="8"/>
+      <circle cx="405" cy="95" r="8"/>
+      <circle cx="720" cy="170" r="8"/>
+    </g>
+    <rect x="730" y="48" width="175" height="265" rx="22" fill="#14222b" opacity=".92"/>
+    <path d="M775 122v-28c0-34 24-58 57-58s57 24 57 58v28" fill="none" stroke="url(#gold)" stroke-width="12" stroke-linecap="round"/>
+    <rect x="760" y="118" width="145" height="118" rx="18" fill="url(#gold)"/>
+    <circle cx="832" cy="171" r="17" fill="#14222b"/>
+    <path d="M832 186v30" stroke="#14222b" stroke-width="11" stroke-linecap="round"/>
+  </g>
+  <text x="104" y="655" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#14222b">Financial Agent Replay Benchmark</text>
+  <text x="106" y="700" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#596a72">Point-in-time replay, leakage controls, and decision reversal analysis</text>
+</svg>

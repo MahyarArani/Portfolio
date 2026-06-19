@@ -1,15 +1,23 @@
 ---
-title: "Automated DNS Log Analysis"
-summary: "Explored DNS log analysis as a way to improve network observability, understand traffic patterns, and support more resilient supply-chain operations."
+title: "DNS Log Analytics for Operational Signals"
+summary: "Explored DNS and web-log data as an analytics source for observability, anomaly detection, and operational planning."
 date: "2024-01-01"
-images: []
+images: ["generated/covers/dns-log-analytics.svg"]
 slug: "automated-dns-log-analysis_"
 ---
 
-Automated DNS Log Analysis and Its Use in Resilient Supply Chains
+DNS Log Analytics for Operational Signals
 
-This work explored how DNS and related website log data can be used as an operational signal for network observability and downstream planning. Log files capture the behavior of systems, services, and users over time, making them useful for identifying activity patterns, abnormal traffic, and shifts in demand.
+DNS and web logs are often treated as infrastructure exhaust. This project looked at them as a data-science source: a stream of behavioral signals that can reveal traffic patterns, unusual activity, service demand, and early operational stress.
 
-The project focused on the idea that traffic data is not only useful for security or infrastructure monitoring, but can also inform supply-chain decisions. By studying request patterns, peaks, and anomalies, organizations can better understand customer behavior, detect disruptions earlier, and improve planning for logistics and service delivery.
+## Analytics framing
 
-At a portfolio level, this project sits at the intersection of analytics, observability, and operational resilience. It reflects an interest in using technical infrastructure data as a practical source for broader business insight.
+The work focused on how request logs can be transformed into structured features for analysis. Useful signals include query frequency, repeated domains, traffic bursts, time-of-day patterns, unusual source behavior, and changes in service demand.
+
+## Why it matters
+
+Log analytics can support more than security monitoring. It can help teams understand how systems are actually used, detect disruptions earlier, and connect technical observability with planning questions such as capacity, customer behavior, and service reliability.
+
+## Portfolio relevance
+
+This project sits at the intersection of analytics engineering, observability, and data science. It shows how low-level operational data can become a decision-support asset when it is cleaned, modeled, and interpreted carefully.

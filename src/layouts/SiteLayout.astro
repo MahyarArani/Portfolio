@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { about } from '../lib/about';
 import { siteMeta } from '../lib/site';
 
 interface Props {
@@ -61,8 +62,11 @@ const navItems = [
 
     <footer class="site-footer">
       <div class="shell footer-row">
-        <p>Built with Astro. Structured for ongoing updates in content files.</p>
-        <a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a>
+        <p>Applied AI, analytics, GIS, Power Platform, BI, and research portfolio.</p>
+        <div class="footer-links">
+          <a href={about.linkedin}>LinkedIn</a>
+          <a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a>
+        </div>
       </div>
     </footer>
   </body>

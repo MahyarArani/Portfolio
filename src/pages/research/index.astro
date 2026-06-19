@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import EntryListItem from '../../components/EntryListItem.astro';
 import SiteLayout from '../../layouts/SiteLayout.astro';
+import { currentResearchMaterials } from '../../lib/githubMaterials';
 import { isResearch, siteMeta, sortEntries } from '../../lib/site';
 
 const entries = sortEntries((await getCollection('projects')).filter(isResearch));
@@ -12,10 +13,10 @@ const base = import.meta.env.BASE_URL;
   <section class="page-hero">
     <div class="shell">
       <span class="eyebrow">Research</span>
-      <h1 class="page-title">Publications, papers, and ongoing studies.</h1>
+      <h1 class="page-title">Agentic AI, financial risk, and analytics research.</h1>
       <p class="lede">
-        This section brings together publication-oriented work across organizational studies, sustainability,
-        consumer behavior, and related analytical topics.
+        Published research and selected working projects across agentic AI evaluation, temporal leakage, financial replay,
+        mortgage credit risk, and applied analytics.
       </p>
     </div>
   </section>
@@ -23,11 +24,11 @@ const base = import.meta.env.BASE_URL;
   <section class="section section-tight">
     <div class="shell collection-banner">
       <div>
-        <span class="eyebrow">Research Archive</span>
-        <h2>{entries.length} research entries</h2>
+        <span class="eyebrow">Research Portfolio</span>
+        <h2>Publications and active research</h2>
       </div>
       <p>
-        Publication-oriented work across organizational studies, sustainability, consumer behavior, and analytical methods.
+        Peer-reviewed and conference work is listed alongside private research systems summarized at a public-facing level.
       </p>
     </div>
   </section>
@@ -35,9 +36,19 @@ const base = import.meta.env.BASE_URL;
   <section class="section">
     <div class="shell quote-band" style="margin-bottom: 1.25rem;">
       <p>
-        The research portfolio complements the applied project work by showing academic writing, structured evaluation
-        methods, and long-form analysis beyond operational delivery.
+        The research portfolio connects data science with evaluation design: how to build benchmarks, avoid leakage,
+        measure model behavior, and reason about AI systems in financial and organizational settings.
       </p>
+    </div>
+
+    <div class="shell repo-grid" style="margin-bottom: 1.25rem;">
+      {currentResearchMaterials.map((item) => (
+        <article class="repo-card">
+          <span class="eyebrow-tag">Current Research</span>
+          <h3>{item.title}</h3>
+          <p>{item.summary}</p>
+        </article>
+      ))}
     </div>
 
     <div class="shell entry-list">
@@ -48,8 +59,8 @@ const base = import.meta.env.BASE_URL;
       <div class="mosaic-card">
         <img src={`${base}google-sites/images/Papers/deecf8d3a0ef17ae1fb752e12112e0eb.jpg`} alt="Research section visual" />
         <div class="mosaic-caption">
-          <strong>Research archive</strong>
-          <span>Papers, frameworks, and publication-oriented studies across multiple domains.</span>
+          <strong>Research portfolio</strong>
+          <span>Papers, frameworks, and analytical studies across multiple domains.</span>
         </div>
       </div>
     </div>

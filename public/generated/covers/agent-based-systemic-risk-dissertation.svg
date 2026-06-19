@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Agent-Based Systemic-Risk Dissertation cover</title>
+  <desc id="desc">A dissertation research map linking agents, liquidity, herding, replay, and systemic risk.</desc>
+  <rect width="1200" height="760" fill="#f7fbf9"/>
+  <rect x="105" y="105" width="990" height="470" rx="34" fill="#ffffff" stroke="#d8e7e2" stroke-width="3"/>
+  <g transform="translate(160 145)">
+    <circle cx="440" cy="210" r="82" fill="#14222b"/>
+    <text x="440" y="202" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#ffffff">Systemic</text>
+    <text x="440" y="234" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#ffffff">Risk</text>
+    <g fill="#ffffff" stroke="#0c8c76" stroke-width="6">
+      <circle cx="160" cy="100" r="54"/>
+      <circle cx="170" cy="320" r="54"/>
+      <circle cx="725" cy="100" r="54"/>
+      <circle cx="720" cy="320" r="54"/>
+      <circle cx="440" cy="35" r="48"/>
+      <circle cx="440" cy="390" r="48"/>
+    </g>
+    <g stroke="#d8e7e2" stroke-width="6" stroke-linecap="round">
+      <path d="M210 120l165 62M220 306l155-70M500 180l175-62M500 240l170 66M440 83v45M440 292v50"/>
+      <path d="M160 154C265 265 315 300 440 390M725 154C620 265 565 300 440 390"/>
+    </g>
+    <g fill="#0c8c76">
+      <circle cx="160" cy="100" r="10"/>
+      <circle cx="170" cy="320" r="10"/>
+      <circle cx="725" cy="100" r="10"/>
+      <circle cx="720" cy="320" r="10"/>
+      <circle cx="440" cy="35" r="10"/>
+      <circle cx="440" cy="390" r="10"/>
+    </g>
+    <path d="M70 420C210 370 290 440 415 350C535 263 610 335 820 250" fill="none" stroke="#f1b900" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <text x="104" y="655" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" fill="#14222b">Agent-Based Systemic-Risk Dissertation</text>
+  <text x="106" y="700" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#596a72">Research plan for replay, herding, liquidity fragility, and agentic markets</text>
+</svg>

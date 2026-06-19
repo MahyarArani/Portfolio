@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Credit Score Exploratory Data Analysis cover</title>
+  <desc id="desc">Credit score gauge, feature distributions, and data-quality markers.</desc>
+  <rect width="1200" height="760" fill="#f7fbf9"/>
+  <rect x="110" y="115" width="980" height="450" rx="34" fill="#ffffff" stroke="#d8e7e2" stroke-width="3"/>
+  <g transform="translate(160 165)">
+    <path d="M130 315a190 190 0 1 1 380 0" fill="none" stroke="#d8e7e2" stroke-width="42" stroke-linecap="round"/>
+    <path d="M130 315a190 190 0 0 1 116-175" fill="none" stroke="#f1b900" stroke-width="42" stroke-linecap="round"/>
+    <path d="M246 140a190 190 0 0 1 264 175" fill="none" stroke="#0c8c76" stroke-width="42" stroke-linecap="round"/>
+    <path d="M320 315l96-122" stroke="#14222b" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="320" cy="315" r="18" fill="#14222b"/>
+    <g transform="translate(585 30)">
+      <rect x="0" y="0" width="330" height="310" rx="28" fill="#f7fbf9" stroke="#d8e7e2" stroke-width="3"/>
+      <g fill="#0c8c76">
+        <rect x="55" y="190" width="32" height="70" rx="7"/>
+        <rect x="105" y="145" width="32" height="115" rx="7"/>
+        <rect x="155" y="90" width="32" height="170" rx="7"/>
+        <rect x="205" y="132" width="32" height="128" rx="7"/>
+        <rect x="255" y="170" width="32" height="90" rx="7"/>
+      </g>
+      <g fill="#f1b900">
+        <circle cx="68" cy="72" r="11"/>
+        <circle cx="118" cy="92" r="11"/>
+        <circle cx="168" cy="58" r="11"/>
+        <circle cx="218" cy="83" r="11"/>
+        <circle cx="268" cy="50" r="11"/>
+      </g>
+    </g>
+  </g>
+  <text x="104" y="655" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" fill="#14222b">Credit Score Exploratory Data Analysis</text>
+  <text x="106" y="700" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#596a72">Feature profiling, data quality, and model-readiness for credit classification</text>
+</svg>

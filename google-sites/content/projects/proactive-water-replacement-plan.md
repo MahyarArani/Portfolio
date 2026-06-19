@@ -1,15 +1,23 @@
 ---
-title: "Proactive Water Replacement Plan"
-summary: "Planning work focused on proactive infrastructure replacement and decision support for water-system maintenance and long-term operational planning."
+title: "Proactive Water Replacement Planning"
+summary: "Applied analytics for proactive infrastructure replacement, risk-aware prioritization, and long-term water-system planning."
 date: "2024-01-01"
 images: ["ProActive Water Replacement Plan/89a1a1d4ff021e25bb639fa6e814ee2d.jpg"]
 slug: "proactive-water-replacement-plan"
 ---
 
-Proactive Water Replacement Plan
+Proactive Water Replacement Planning
 
-This project focused on supporting proactive planning for water-system replacement rather than reacting only after failures occur. The core idea was to improve long-term infrastructure decisions by identifying where replacement activity should be prioritized based on planning, risk, and operational need.
+This project focused on moving water-system planning from reactive maintenance toward proactive decision support. The goal was to help identify where replacement work should be prioritized before failures create service disruption.
 
-From an analytical perspective, the work aligns with asset-management and decision-support problems: combining available information into a clearer view of where resources should be allocated first. In practice, that kind of planning can help reduce service disruption, improve maintenance scheduling, and support more defensible capital planning.
+## Analytics framing
 
-The project represents a planning-oriented application of analytics, where the value comes from helping teams move from reactive maintenance toward a more systematic and forward-looking operating model.
+Infrastructure planning is a data problem as much as an engineering problem. Useful prioritization depends on bringing together asset condition, operational history, risk, service impact, and planning constraints into a structure that decision-makers can use.
+
+## Decision-support value
+
+The value of the work is in making replacement planning more defensible. A clear analytical framework helps teams explain why certain assets should be addressed first, how risk is distributed, and where capital planning can reduce future disruption.
+
+## Portfolio relevance
+
+This is an example of analytics for public infrastructure: practical, decision-oriented, and focused on turning complex operational data into planning insight.

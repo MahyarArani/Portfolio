@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Time-Traveler Benchmark cover</title>
+  <desc id="desc">A clock, timeline, and blocked future information window for temporal leakage evaluation.</desc>
+  <rect width="1200" height="760" fill="#f7fbf9"/>
+  <rect x="105" y="110" width="990" height="460" rx="34" fill="#ffffff" stroke="#d8e7e2" stroke-width="3"/>
+  <g transform="translate(150 150)">
+    <circle cx="250" cy="210" r="150" fill="#dff2ed" stroke="#0c8c76" stroke-width="8"/>
+    <circle cx="250" cy="210" r="12" fill="#14222b"/>
+    <path d="M250 210V115M250 210l78 55" stroke="#14222b" stroke-width="11" stroke-linecap="round"/>
+    <g fill="none" stroke="#14222b" stroke-width="6" stroke-linecap="round">
+      <path d="M250 80v26M250 314v26M120 210h26M354 210h26"/>
+    </g>
+    <path d="M470 305h410" stroke="#0c8c76" stroke-width="12" stroke-linecap="round"/>
+    <g fill="#ffffff" stroke="#0c8c76" stroke-width="6">
+      <circle cx="510" cy="305" r="25"/>
+      <circle cx="650" cy="305" r="25"/>
+      <circle cx="790" cy="305" r="25"/>
+    </g>
+    <rect x="700" y="95" width="205" height="140" rx="24" fill="#14222b"/>
+    <path d="M750 148v-18c0-28 20-48 52-48s52 20 52 48v18" fill="none" stroke="#f1b900" stroke-width="10" stroke-linecap="round"/>
+    <rect x="735" y="145" width="135" height="72" rx="14" fill="#f1b900"/>
+    <path d="M475 190C555 120 628 165 700 110" fill="none" stroke="#f1b900" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="104" y="655" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" fill="#14222b">Time-Traveler Benchmark</text>
+  <text x="106" y="700" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#596a72">Point-in-time tests for temporal leakage in AI-agent evaluation</text>
+</svg>

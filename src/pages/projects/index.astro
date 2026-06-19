@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import EntryListItem from '../../components/EntryListItem.astro';
 import SiteLayout from '../../layouts/SiteLayout.astro';
+import { repoMaterials } from '../../lib/githubMaterials';
 import { isProject, siteMeta, sortEntries } from '../../lib/site';
 
 const entries = sortEntries((await getCollection('projects')).filter(isProject));
@@ -11,10 +12,11 @@ const entries = sortEntries((await getCollection('projects')).filter(isProject))
   <section class="page-hero">
     <div class="shell">
       <span class="eyebrow">Projects</span>
-      <h1 class="page-title">Operational and technical case studies.</h1>
+      <h1 class="page-title">Analytics, data science, and agentic AI systems.</h1>
       <p class="lede">
-        These entries focus on delivery: systems built, workflows automated, dashboards designed, and analysis turned into
-        usable outputs for stakeholders.
+        Applied work across analytics engineering, machine learning, forecasting, BI, geospatial analytics, and agentic
+        AI-assisted workflows. Each entry emphasizes the problem, data approach, modeling or system design, and
+        decision-support value.
       </p>
     </div>
   </section>
@@ -22,12 +24,41 @@ const entries = sortEntries((await getCollection('projects')).filter(isProject))
   <section class="section section-tight">
     <div class="shell collection-banner">
       <div>
-        <span class="eyebrow">Project Archive</span>
-        <h2>{entries.length} project entries</h2>
+        <span class="eyebrow">Project Portfolio</span>
+        <h2>Applied analytics case studies</h2>
       </div>
       <p>
-        Delivery-focused work across automation, GIS, business intelligence, machine learning, and operational analytics.
+        Data products, dashboards, forecasting systems, classification studies, geospatial analysis, and agentic workflow
+        tools supported by selected public and private repository materials.
       </p>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="shell section-head">
+      <div>
+        <span class="eyebrow">Repository Materials</span>
+        <h2 class="section-title">Code, dashboards, and working systems</h2>
+      </div>
+      <p class="section-caption">
+        Public repositories are linked directly. Private materials are summarized only at a capability level.
+      </p>
+    </div>
+
+    <div class="shell repo-grid">
+      {repoMaterials.map((repo) => (
+        <article class="repo-card">
+          <div class="repo-card-head">
+            <span class="eyebrow-tag">{repo.category}</span>
+            <span class="repo-visibility">{repo.visibility}</span>
+          </div>
+          <h3>{repo.href ? <a href={repo.href}>{repo.name}</a> : repo.name}</h3>
+          <p>{repo.summary}</p>
+          <div class="pill-row">
+            {repo.stack.map((item) => <span class="metric-chip">{item}</span>)}
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 

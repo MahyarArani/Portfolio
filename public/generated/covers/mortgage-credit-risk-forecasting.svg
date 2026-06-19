@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Mortgage Credit-Risk Forecasting cover</title>
+  <desc id="desc">Homes, borrower segments, and a forecasting curve for mortgage credit risk.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f7fbf9"/>
+      <stop offset="1" stop-color="#e4f1f8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <rect x="90" y="120" width="1020" height="450" rx="34" fill="#ffffff" stroke="#d8e7e2" stroke-width="3"/>
+  <g transform="translate(145 185)">
+    <g fill="#f1b900" stroke="#14222b" stroke-width="7" stroke-linejoin="round">
+      <path d="M40 160L140 70l100 90v150H40z"/>
+      <path d="M330 130l92-82 92 82v180H330z" fill="#dff2ed"/>
+      <path d="M610 172l116-106 116 106v138H610z" fill="#f8e9a6"/>
+    </g>
+    <g fill="#ffffff" stroke="#14222b" stroke-width="5">
+      <rect x="116" y="214" width="48" height="96" rx="8"/>
+      <rect x="393" y="210" width="56" height="100" rx="8"/>
+      <rect x="700" y="218" width="52" height="92" rx="8"/>
+    </g>
+    <g fill="none" stroke="#0c8c76" stroke-width="9" stroke-linecap="round">
+      <path d="M30 355h870"/>
+      <path d="M35 420C145 380 220 430 315 350C420 262 510 350 608 292C735 216 793 318 900 230"/>
+    </g>
+    <g fill="#0c8c76">
+      <circle cx="315" cy="350" r="13"/>
+      <circle cx="608" cy="292" r="13"/>
+      <circle cx="900" cy="230" r="13"/>
+    </g>
+    <g transform="translate(720 20)">
+      <rect x="0" y="0" width="170" height="92" rx="18" fill="#14222b"/>
+      <rect x="22" y="25" width="126" height="12" rx="6" fill="#f1b900"/>
+      <rect x="22" y="53" width="88" height="12" rx="6" fill="#dff2ed"/>
+    </g>
+  </g>
+  <text x="104" y="655" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" fill="#14222b">Mortgage Credit-Risk Forecasting</text>
+  <text x="106" y="700" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#596a72">Temporal loan-performance modeling and risk signal validation</text>
+</svg>

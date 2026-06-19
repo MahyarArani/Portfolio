@@ -2,13 +2,14 @@
 import { getCollection } from 'astro:content';
 import EntryListItem from '../components/EntryListItem.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
-import { getFeatured, isProject, isResearch, siteMeta, sortEntries } from '../lib/site';
+import { getFeatured, isResearch, siteMeta, sortEntries } from '../lib/site';
 import { about } from '../lib/about';
+import { repoMaterials } from '../lib/githubMaterials';
 
 const entries = sortEntries(await getCollection('projects'));
-const projectEntries = entries.filter(isProject);
 const researchEntries = entries.filter(isResearch);
 const featured = getFeatured(entries);
+const featuredRepos = repoMaterials.slice(0, 3);
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -29,6 +30,7 @@ const base = import.meta.env.BASE_URL;
         <div class="intro-actions">
           <a href={`${base}projects/`} class="button-link">View Projects</a>
           <a href={`${base}about/`} class="button-link-muted">About Me</a>
+          <a href={about.linkedin} class="button-link-muted">LinkedIn</a>
           <a href={`mailto:${about.email}`} class="button-link-muted">Contact</a>
         </div>
       </div>
@@ -38,22 +40,7 @@ const base = import.meta.env.BASE_URL;
           <div class="intro-avatar">{about.name.split(' ').map((n: string) => n[0]).join('')}</div>
           <div>
             <strong class="intro-card-name">{about.name}</strong>
-            <span class="intro-card-sub">Data Science &amp; Research</span>
-          </div>
-        </div>
-
-        <div class="intro-stats">
-          <div class="intro-stat">
-            <strong>{projectEntries.length}</strong>
-            <span>Projects</span>
-          </div>
-          <div class="intro-stat">
-            <strong>{researchEntries.length}</strong>
-            <span>Papers</span>
-          </div>
-          <div class="intro-stat">
-            <strong>4</strong>
-            <span>Domains</span>
+            <span class="intro-card-sub">Analytics · Data Science · Agentic AI</span>
           </div>
         </div>
 
@@ -70,12 +57,37 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
+  <section class="section">
+    <div class="shell section-head">
+      <div>
+        <span class="eyebrow">Technical Materials</span>
+        <h2 class="section-title">Repository-backed analytics work</h2>
+      </div>
+      <a href={`${base}projects/`} class="button-link-muted">View materials</a>
+    </div>
+    <div class="shell repo-grid">
+      {featuredRepos.map((repo) => (
+        <article class="repo-card">
+          <div class="repo-card-head">
+            <span class="eyebrow-tag">{repo.category}</span>
+            <span class="repo-visibility">{repo.visibility}</span>
+          </div>
+          <h3>{repo.href ? <a href={repo.href}>{repo.name}</a> : repo.name}</h3>
+          <p>{repo.summary}</p>
+          <div class="pill-row">
+            {repo.stack.map((item) => <span class="metric-chip">{item}</span>)}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
   <!-- ─── Selected Projects ────────────────────────────────────────────────── -->
   <section class="section">
     <div class="shell section-head">
       <div>
-        <span class="eyebrow">Work</span>
-        <h2 class="section-title">Selected projects</h2>
+        <span class="eyebrow">Applied Analytics</span>
+        <h2 class="section-title">Data products and model systems</h2>
       </div>
       <a href={`${base}projects/`} class="button-link-muted">See all →</a>
     </div>
@@ -88,8 +100,8 @@ const base = import.meta.env.BASE_URL;
   <section class="section">
     <div class="shell section-head">
       <div>
-        <span class="eyebrow">Research</span>
-        <h2 class="section-title">Publications &amp; analytical work</h2>
+        <span class="eyebrow">Agentic AI Research</span>
+        <h2 class="section-title">Benchmarks, publications, and risk studies</h2>
       </div>
       <a href={`${base}research/`} class="button-link-muted">All research →</a>
     </div>

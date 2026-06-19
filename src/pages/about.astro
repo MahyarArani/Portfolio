@@ -1,8 +1,38 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import { about } from '../lib/about';
 import { siteMeta } from '../lib/site';
 
 const base = import.meta.env.BASE_URL;
+const certifications = [
+  {
+    title: 'Microsoft Certified: Azure AI Fundamentals',
+    meta: 'Earned December 2, 2023',
+    href: `${base}certifications/azure-ai-fundamentals.png`,
+    image: `${base}certifications/azure-ai-fundamentals.png`,
+  },
+  {
+    title: 'Microsoft Certified: Azure Data Engineer Associate',
+    meta: 'Earned December 25, 2024',
+    href: `${base}certifications/azure-data-engineer-associate.png`,
+    image: `${base}certifications/azure-data-engineer-associate.png`,
+  },
+  {
+    title: 'Microsoft Certified: Azure Data Fundamentals',
+    meta: 'Credential material',
+    href: `${base}certifications/azure-data-fundamentals.pdf`,
+  },
+  {
+    title: 'Data Analytics Certificate',
+    meta: 'Professional certificate material',
+    href: `${base}certifications/data-analytics-certificate.pdf`,
+  },
+  {
+    title: 'Big Data Certificate',
+    meta: 'Professional certificate material',
+    href: `${base}certifications/big-data-certificate.pdf`,
+  },
+];
 ---
 
 <SiteLayout title={`About | ${siteMeta.name}`}>
@@ -10,64 +40,41 @@ const base = import.meta.env.BASE_URL;
     <div class="shell about-hero-grid">
       <div>
         <span class="eyebrow">About</span>
-        <h1 class="page-title">Building operational systems from complex data problems.</h1>
+        <h1 class="page-title">Turning complex data into analytics systems and agentic AI research.</h1>
         <p class="lede">
-          Mahyar Arani works across applied analytics, automation, geospatial systems, business intelligence, and research.
-          The work combines technical implementation with decision support, turning raw data and fragmented workflows into
-          usable tools for teams and stakeholders.
+          Mahyar Arani works across analytics engineering, data science, business intelligence, geospatial analytics, and
+          agentic AI evaluation. The work combines data modeling, reproducible experiments, and decision-support systems
+          for operational, financial, and research problems.
         </p>
         <div class="hero-actions">
           <a href={`${base}projects/`} class="button-link">View Projects</a>
           <a href={`${base}research/`} class="button-link-muted">View Research</a>
+          <a href={about.linkedin} class="button-link-muted">LinkedIn</a>
         </div>
       </div>
 
       <aside class="profile-panel">
         <span class="eyebrow">Profile Snapshot</span>
-        <h3>Applied analytics, delivery, and research</h3>
+        <h3>Analytics, data science, and agentic AI</h3>
         <div class="profile-facts">
           <div class="profile-fact">
             <strong>Focus</strong>
-            <span>AI workflows, Power Platform, GIS, BI, and analytical research.</span>
+            <span>Agentic AI benchmarks, analytics engineering, forecasting, BI, GIS, and applied machine learning.</span>
           </div>
           <div class="profile-fact">
             <strong>Working style</strong>
-            <span>Problem framing, technical implementation, validation, and stakeholder-facing reporting.</span>
+            <span>Problem framing, data modeling, evaluation design, technical implementation, and stakeholder-facing reporting.</span>
           </div>
           <div class="profile-fact">
             <strong>Contact</strong>
             <a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a>
           </div>
+          <div class="profile-fact">
+            <strong>LinkedIn</strong>
+            <a href={about.linkedin}>linkedin.com/in/mahyar-arani</a>
+          </div>
         </div>
       </aside>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell mosaic-grid">
-      <div class="mosaic-card">
-        <img src={`${base}google-sites/images/About/6cdf7efe64b19032e5a0831a488d00d9.jpg`} alt="About page visual" />
-        <div class="mosaic-caption">
-          <strong>Applied problem solving</strong>
-          <span>Automation, dashboarding, cloud workflows, and decision support.</span>
-        </div>
-      </div>
-      <div class="mosaic-stack">
-        <div class="mosaic-card">
-          <img src={`${base}google-sites/images/About/39b511dacf577b7d8d65710d8ac5432c.jpg`} alt="Research and analytics visual" />
-          <div class="mosaic-caption">
-            <strong>Research mindset</strong>
-            <span>Academic work informs the way operational systems are designed and evaluated.</span>
-          </div>
-        </div>
-        <div class="mosaic-card">
-          <img src={`${base}google-sites/images/About/e7f160a2f8ed3114741686f388a1cf5f.jpg`} alt="Portfolio background visual" />
-          <div class="mosaic-caption">
-            <strong>Cross-functional delivery</strong>
-            <span>From data cleaning and modeling to deployment and stakeholder reporting.</span>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -77,13 +84,13 @@ const base = import.meta.env.BASE_URL;
         <span class="eyebrow">Profile</span>
         <h3>Professional focus</h3>
         <p>
-          This work sits at the intersection of data science and delivery. Across the portfolio, the recurring pattern is
-          translating messy operational or research problems into structured systems. That includes OCR pipelines,
-          Power Platform workflows, Power BI governance, geospatial routing, machine learning comparisons, and NLP analysis.
+          This work sits at the intersection of analytics, data science, and agentic AI research. Across the portfolio,
+          the recurring pattern is translating messy operational or research problems into structured data products,
+          evaluation pipelines, and decision systems.
         </p>
         <p>
-          The emphasis is not only on analysis, but on implementation: building workflows, validating outputs, supporting
-          stakeholders, and presenting results in forms teams can actually use.
+          The GitHub portfolio adds supporting technical material from public repositories and selected private research
+          systems summarized without exposing internal files.
         </p>
       </div>
 
@@ -91,11 +98,36 @@ const base = import.meta.env.BASE_URL;
         <span class="eyebrow">Capabilities</span>
         <h3>Core strengths</h3>
         <ul>
-          <li>Operational workflow design using Azure, Power Platform, and automation tools.</li>
-          <li>Business intelligence reporting with strong attention to data quality and exception handling.</li>
-          <li>Geospatial analysis and routing-oriented problem solving using ArcGIS and related systems.</li>
-          <li>Research-driven thinking across organizational agility, sustainability, and consumer behavior.</li>
+          <li>Agentic AI benchmark design for temporal leakage, replay, and financial-risk evaluation.</li>
+          <li>Analytics engineering with strong attention to data quality, semantic modeling, and exception handling.</li>
+          <li>Machine learning and forecasting projects for classification, regression, credit risk, and time series.</li>
+          <li>Geospatial analytics and routing-oriented problem solving using ArcGIS and related systems.</li>
+          <li>Research-driven thinking across financial risk, sustainability, organizational behavior, and consumer behavior.</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head certification-head">
+        <span class="eyebrow">Certifications</span>
+        <h2>Cloud, data, and analytics credentials</h2>
+      </div>
+      <div class="certification-grid">
+        {certifications.map((certificate) => (
+          <a href={certificate.href} class="certification-card">
+            {certificate.image ? (
+              <img src={certificate.image} alt={certificate.title} loading="lazy" />
+            ) : (
+              <div class="certification-document">PDF</div>
+            )}
+            <div>
+              <strong>{certificate.title}</strong>
+              <span>{certificate.meta}</span>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </section>
@@ -103,27 +135,27 @@ const base = import.meta.env.BASE_URL;
   <section class="section">
     <div class="shell capability-grid">
       <div class="surface">
-        <span class="eyebrow">Applied Work</span>
-        <h3>Delivery-oriented portfolio</h3>
+        <span class="eyebrow">Analytics</span>
+        <h3>Decision-ready data products</h3>
         <p>
-          The project work focuses on practical implementation: automation pipelines, map-based analysis, reporting systems,
-          classification workflows, and technical solutions designed for real operational use.
+          The project work focuses on dashboards, data pipelines, model comparisons, geospatial analysis, and reporting
+          systems designed for repeated operational use.
         </p>
       </div>
       <div class="surface">
-        <span class="eyebrow">Research</span>
-        <h3>Analytical depth</h3>
+        <span class="eyebrow">Agentic AI</span>
+        <h3>Benchmark-driven research</h3>
         <p>
-          The research portfolio adds another layer to the profile, showing structured inquiry into organizational behavior,
-          sustainability, supply chains, and digital consumer behavior.
+          The current research portfolio studies temporal leakage, counterfactual replay, financial-agent behavior, and
+          systemic risk in AI-mediated decision environments.
         </p>
       </div>
       <div class="surface">
-        <span class="eyebrow">Collaboration</span>
-        <h3>Working across teams</h3>
+        <span class="eyebrow">Data Science</span>
+        <h3>Modeling with context</h3>
         <p>
-          Many of the projects reflect collaboration with operations teams, GIS specialists, management stakeholders, and
-          business users who needed reliable outputs rather than isolated technical experiments.
+          The modeling work emphasizes time-aware validation, feature design, interpretability, and the connection between
+          model output and real decisions.
         </p>
       </div>
     </div>
@@ -134,7 +166,8 @@ const base = import.meta.env.BASE_URL;
       <span class="eyebrow">Contact</span>
       <p>
         For project discussions, research conversations, or collaboration opportunities, the best contact point is
-        <a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a>.
+        <a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a>. You can also connect on
+        <a href={about.linkedin}>LinkedIn</a>.
       </p>
     </div>
   </section>

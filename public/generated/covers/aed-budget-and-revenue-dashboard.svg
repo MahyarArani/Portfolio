@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">AED Budget and Revenue Dashboard cover</title>
+  <desc id="desc">A financial dashboard with revenue bars, budget variance, and KPI cards.</desc>
+  <rect width="1200" height="760" fill="#f6faf8"/>
+  <circle cx="980" cy="180" r="210" fill="#f1b900" opacity=".18"/>
+  <rect x="95" y="100" width="1010" height="500" rx="32" fill="#ffffff" stroke="#d8e7e2" stroke-width="3"/>
+  <g transform="translate(145 150)">
+    <rect x="0" y="0" width="250" height="120" rx="22" fill="#14222b"/>
+    <rect x="290" y="0" width="250" height="120" rx="22" fill="#0c8c76"/>
+    <rect x="580" y="0" width="250" height="120" rx="22" fill="#f1b900"/>
+    <g fill="#ffffff" opacity=".92">
+      <rect x="32" y="34" width="104" height="16" rx="8"/>
+      <rect x="32" y="70" width="170" height="20" rx="10"/>
+      <rect x="322" y="34" width="104" height="16" rx="8"/>
+      <rect x="322" y="70" width="170" height="20" rx="10"/>
+      <rect x="612" y="34" width="104" height="16" rx="8"/>
+      <rect x="612" y="70" width="170" height="20" rx="10"/>
+    </g>
+    <g transform="translate(20 190)">
+      <rect x="0" y="0" width="500" height="230" rx="24" fill="#f7fbf9" stroke="#d8e7e2" stroke-width="3"/>
+      <g fill="#0c8c76">
+        <rect x="55" y="120" width="52" height="70" rx="8"/>
+        <rect x="135" y="82" width="52" height="108" rx="8"/>
+        <rect x="215" y="48" width="52" height="142" rx="8"/>
+        <rect x="295" y="95" width="52" height="95" rx="8"/>
+        <rect x="375" y="62" width="52" height="128" rx="8"/>
+      </g>
+      <path d="M54 95C140 42 200 80 270 38C350 -10 390 40 448 20" fill="none" stroke="#f1b900" stroke-width="9" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(570 190)">
+      <rect x="0" y="0" width="320" height="230" rx="24" fill="#f7fbf9" stroke="#d8e7e2" stroke-width="3"/>
+      <circle cx="160" cy="115" r="78" fill="none" stroke="#d8e7e2" stroke-width="28"/>
+      <path d="M160 37a78 78 0 0 1 74 102" fill="none" stroke="#0c8c76" stroke-width="28" stroke-linecap="round"/>
+      <path d="M160 37a78 78 0 0 0-55 133" fill="none" stroke="#f1b900" stroke-width="28" stroke-linecap="round"/>
+    </g>
+  </g>
+  <text x="104" y="660" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" fill="#14222b">AED Budget and Revenue Dashboard</text>
+  <text x="106" y="704" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#596a72">Budget monitoring, revenue reporting, and Power BI semantic modeling</text>
+</svg>

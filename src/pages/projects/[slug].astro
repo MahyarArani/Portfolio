@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import SiteLayout from '../../layouts/SiteLayout.astro';
-import { getCoverImage, getExcerpt, isResearch } from '../../lib/site';
+import { getCoverImage, getExcerpt, getImageUrl, isResearch } from '../../lib/site';
 
 export async function getStaticPaths() {
   const entries = await getCollection('projects');
@@ -26,7 +26,7 @@ const entryType = isResearch(project) ? 'Research' : 'Project';
         <a href={isResearch(project) ? `${base}research/` : `${base}projects/`} class="button-link-muted">Back</a>
       </div>
       <h1 class="page-title">{project.data.title}</h1>
-      {project.data.date && <p class="lede">Date: {project.data.date}</p>}
+      {project.data.date && <p class="lede">Completed or published: {project.data.date}</p>}
     </div>
   </section>
 
@@ -38,7 +38,6 @@ const entryType = isResearch(project) ? 'Research' : 'Project';
       <div class="surface">
         <div class="pill-row">
           <span class="metric-chip">{entryType}</span>
-          {project.data.images && <span class="metric-chip">{project.data.images.length} visuals</span>}
           {project.data.date && <span class="metric-chip">{project.data.date.slice(0, 4)}</span>}
         </div>
       </div>
@@ -62,7 +61,7 @@ const entryType = isResearch(project) ? 'Research' : 'Project';
       <div class="shell card-grid">
         {project.data.images.slice(1, 4).map((img) => (
           <div class="mosaic-card">
-            <img src={`${base}google-sites/images/${img}`} alt={project.data.title} loading="lazy" />
+            <img src={getImageUrl(img)} alt={project.data.title} loading="lazy" />
           </div>
         ))}
       </div>
@@ -71,7 +70,7 @@ const entryType = isResearch(project) ? 'Research' : 'Project';
 
   <section class="section">
     <div class="shell surface">
-      <article class="prose prose-invert prose-lg max-w-none prose-headings:font-normal prose-headings:text-white prose-p:text-slate-300 prose-li:text-slate-300 prose-strong:text-white prose-a:text-emerald-300">
+      <article class="prose prose-lg max-w-none prose-headings:font-normal prose-headings:text-slate-900 prose-p:text-slate-700 prose-li:text-slate-700 prose-strong:text-slate-950 prose-a:text-emerald-700">
         <Content />
       </article>
     </div>
