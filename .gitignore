@@ -21,6 +21,3 @@ Thumbs.db
 
 # Local Codex metadata
 .codex
-
-# Local Claude metadata
-.claude/
